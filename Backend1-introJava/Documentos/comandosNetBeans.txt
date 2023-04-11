@@ -1,0 +1,33 @@
+**********************************************************************************************
+
+GENERALES:
+Ctrl. + E : Borra línea de codigo.
+Ctrl. + S : Guarda cambios.
+Shift. + F6 : RUN main proyect (actual).
+Alt. + Shift + F : Le da formato al código.
+Alt + Enter : En texto subrayado para ver sugerencia cuando hay error de sintaxis, import o surround.
+Ctrl. + Shift + : Hace una copia de la línea de código.
+Ctrl. + Space : Completa el código que estamos escribiendo.
+Ctrl. + U U : Convierte el código a mayúsculas.
+Ctrl. + U L : Convierte el código a minúsculas.
+Alt + Insert : Agrega constructores, métodos accesotes, propiedades.
+Ctrl. + G : Ir numero de línea concreto.
+Ctrl. +[NOMBRECLASE] : Me despliega todas las características de la clase.
+Ctrl + shift + c : comenta linea.
+Alt + scroll : aumenta/disminuye pantalla.
+Shift + TAB : elimina un TAB.
+
+**********************************************************************************************
+
+ESTRUCTURAS:
+psvm + TAB : Genera la función main.
+sout + TAB : Genera System.out.println(). Con \n hace enter si necesidad de poner otro sout.
+soutv + TAB : Genera System.out.println("args = " + args).
+if + TAB : Genera bloque if condicion simple.
+ife + TAB : Genera bloque if condicion doble.
+sw + TAB : Genera el switch.
+fori + TAB : Genera el codigo necesario para hacer un for.
+wh/whilen/whileit + TAB : Genera los bloques while.
+do + TAB : Genera los bloques dowhile.
+
+**********************************************************************************************

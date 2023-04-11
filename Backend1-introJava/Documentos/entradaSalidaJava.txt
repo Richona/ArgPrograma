@@ -1,0 +1,24 @@
+****************************************************************************************
+
+ENTRADA Y SALIDA POR CONSOLA: 
+
+Scanner entra = new Scanner(System.in) : declaracion para usar la entra de escaner.
+int num = entra.nextInt() : permite ingresar un num.
+double decimal = entra.nextDouble() : permite ingresar un decimal.
+String frase = entra.nextLine() : permite ingresar una frase.
+Boolean bandera = entra.nextBoolean() : permite ingresar un true o false.
+
+System.out.println() : muestra por pantalla con un enter.
+System.out.print() : muestra por pantalla seguido (como sin saltar).
+System.out.println("\n1 \n2 \n3 \n4 \n5 ") : \n permite dar un enter, asi no usamos tanto sout.
+
+*****************************************************************************************
+
+ENTRADA Y SALIDA MAS FACHA: 
+
+String texto = JOptionPane.showInputDialog("h") : entrada de una frase con un cartel.
+int num = Integer.parseInt(JOptionPane.showInputDialog("num")) : entrada de un numero.
+        
+JOptionPane.showMessageDialog(null, texto) : salida de datos con un cartel.
+
+*****************************************************************************************

@@ -1,0 +1,25 @@
+****************
+TIPOS DE DATOS | VALORES POR DEFECTO:
+
+byte : -128 a 127. Default 0
+
+short : -32,768 a 32,767. Default 0
+
+int : -2,147,483,648 a 2,147,483,64. Default 0
+
+long :-9,223,372,036,854,775,808 a  9,223,372,036,854,775,807. Default 0
+
+float : 100.55 numero decimal, misma cantidad que int. Default 0.0
+
+double :  100.55 numero decimal, misma cantidad que long. Default 0.0
+
+boolean : true o false. Default false
+
+char : 'a' un solo caracter con comillas simples. Default '\u0000'
+
+String : "hola mundo" cadena de caracteres. Default Null
+
+Objetos : Default Null
+
+
+****************

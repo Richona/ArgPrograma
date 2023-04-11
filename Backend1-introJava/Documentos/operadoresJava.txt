@@ -1,0 +1,23 @@
+************************
+OPERADORES ARITMETICOS:
++ : suma
+- : resta
+* : multiplicacion
+/ : division
+% : modulo-resto
+
+************************
+OPERADORES UNARIOS:
++ : valor positivo
+- : valor negativo
+++ : incremento
+-- : decremento
+
+************************
+OPERADORES DE IGUALDAD Y RELACION:
+== : igual
+!= : distinto
+> : mayor que
+>= : mayor o igual que
+< : menor que
+<= : menor o igual que
