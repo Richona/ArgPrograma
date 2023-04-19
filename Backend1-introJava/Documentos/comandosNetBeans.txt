@@ -1,6 +1,7 @@
 **********************************************************************************************
 
 GENERALES:
+
 Ctrl. + E : Borra línea de codigo.
 Ctrl. + S : Guarda cambios.
 Shift. + F6 : RUN main proyect (actual).
@@ -19,15 +20,21 @@ Shift + TAB : elimina un TAB.
 
 **********************************************************************************************
 
-ESTRUCTURAS:
+ESTRUCTURAS: 
+[MOD] agregado particular tools -> options -> Code Templates.
+
 psvm + TAB : Genera la función main.
 sout + TAB : Genera System.out.println(). Con \n hace enter si necesidad de poner otro sout.
 soutv + TAB : Genera System.out.println("args = " + args).
+soutc + TAB : [MOD] genera System.out.print("");
+soutf + TAB : [MOD] genera System.out.printf("");
 if + TAB : Genera bloque if condicion simple.
 ife + TAB : Genera bloque if condicion doble.
 sw + TAB : Genera el switch.
-fori + TAB : Genera el codigo necesario para hacer un for.
+for + TAB : genera for.
+fori + TAB : Genera for para vector length.
+fore + TAB : genera for reducido/ elemento.
 wh/whilen/whileit + TAB : Genera los bloques while.
-do + TAB : Genera los bloques dowhile.
+do + TAB :[MOD] Genera los bloques dowhile.
 
 **********************************************************************************************
