@@ -28,6 +28,8 @@ sout + TAB : Genera System.out.println(). Con \n hace enter si necesidad de pone
 soutv + TAB : Genera System.out.println("args = " + args).
 soutc + TAB : [MOD] genera System.out.print("");
 soutf + TAB : [MOD] genera System.out.printf("");
+jopm + TAB : [MOD] genera JOptionPane.showMessageDialog("");
+jopi + TAB : [MOD] genera JOptionPane.showInputDialog(null, "");
 if + TAB : Genera bloque if condicion simple.
 ife + TAB : Genera bloque if condicion doble.
 sw + TAB : Genera el switch.
