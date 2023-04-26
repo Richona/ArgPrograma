@@ -17,6 +17,10 @@ Ctrl. +[NOMBRECLASE] : Me despliega todas las características de la clase.
 Ctrl + shift + c : comenta linea.
 Alt + scroll : aumenta/disminuye pantalla.
 Shift + TAB : elimina un TAB.
+Alt + ENTER : importa automaticamente.
+Alt + Insert : agrega constructores, getters, setters, etc.
+Ctrl + mouse sobre una clase : dirije a la clase en si.
+
 
 **********************************************************************************************
 
