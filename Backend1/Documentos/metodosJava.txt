@@ -1,0 +1,88 @@
+******************************************************************************
+
+METODOS DE STRING:
+
+
+charAt(int index) : da el caracter de la posicion ingresada.
+
+equals(String str) : compara 2 cadenas, devuelve true o false.
+
+equalsIgnoreCase(String str) : compara 2 cadenas ignorando grafia, devuelve true o false.
+
+compareTo(String otraCadena) : compara 2 cadenas alfabeticamente, devuelve 0 si son iguales, entero negativo si la primera es menor y entero positivo si la primera es mayor.
+
+concat(String str) : concatena dos cadenas.
+
+contains(CharSequence s) : da true si la cadena tiene el caracter ingresado.
+
+endsWith(String suffix) : da true si la cadena es igual al objeto ingresado.
+
+indexOf(String str) : retorna el indice del valor encontrado a partir del parametro ingresado.
+
+isEmpty() : retorna true si la longitud de cadena es 0.
+
+length() : retorna longitud de cadena.
+
+replace(char oldChar, char newChar) : remplaza valor del primer parametro por el segundo.
+
+split(String regex) : retorna un arreglo de cadenas separados por el parametro ingresado.
+
+startsWith(String prefix) : Retorna true si la cadena comienza con el parametro ingresado.
+
+substring(int beginIndex) : retorna subcadena desde el parametro ingresado.
+
+substring(int beginIndex, int beginIndex) : retorna subcadena desde el primer parametro hasta el segundo ingresados.
+
+toCharArray() : retorna conjunto de caracteres de la cadena.
+
+toLowerCase() : retorna cadena en minusculas.
+
+toUpperCase() : retorna cadena de mayusculas.
+
+String.valueOf(int) : convierte un numero a String.
+
+Integer.parseInt(String) : convierte String a numero.
+
+******************************************************************************
+
+METODOS MATH:
+
+
+abs(double a) : Da valor absoluto de un double.
+
+abs(int a) : Da valor absoluto de un entero.
+
+abs(long a) : Da valor absoluto de un long.
+
+max(double a, double b) : Da mayor de dos double.
+
+max(int a, int b) : Da mayor de dos int.
+
+max(long a, long b) : Da mayor de dos long.
+
+min(double a, double b) : Da menor de dos double.
+
+min(int a, int b) : Da menor de dos int.
+
+min(long a, long b) : Da menor de dos long.
+
+pow(double a, double b) : Da valor del primer argumento elevado a potencia del segundo.
+
+random() : Da double positivo, entre 0.0 y 1.0. Multiplicar * 10 (0 y 10), * 100(0,100).
+
+round(double a) : Da long redondeado cercano al double.
+
+sqrt(double a) : Da raiz cuadrada positiva.
+
+floor(double a) : Da entero cercano por debajo.
+
+********************************************************************************
+
+METODOS IMPORTABLES UTILES:
+
+Random rand= new Random() : declaramos el metodo.
+int alea = rand.nextInt(10)+1 : nums randoms de 1 a 10, +1 xq empieza de 0.
+
+JPasswordField pwd = new JPasswordField(); : declaramos el metodo.
+JOptionPane.showConfirmDialog(null, pwd, "Enter Password",JOptionPane.OK_CANCEL_OPTION); : pwd permite ocultar lo que ingresa el usuario.
+System.out.println(pwd.getPassword()); : con getPassword obtenemos lo ingresado, retorna char.
