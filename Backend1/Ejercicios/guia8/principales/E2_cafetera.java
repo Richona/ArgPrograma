@@ -1,4 +1,5 @@
 package guia8.principales;
+import guia8.entidades.E2_Cafetera;
 import guia8.servicios.E2_CafeteraServicio;
 import java.util.Random;//numeros aleatorios.
 import javax.swing.JOptionPane;//entrada y salida de datos en modal.
@@ -24,19 +25,19 @@ public class E2_cafetera {
 4-Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo recibe y se añade a la cafetera la cantidad de café indicada.
     */
     static Random rand = new Random();
-    static Scanner leer = new Scanner(System.in);
+    static Scanner leerMain = new Scanner(System.in);
 
     public static void main(String[] args) {
-        E2_CafeteraServicio cafe = new E2_CafeteraServicio();
+        E2_CafeteraServicio cs = new E2_CafeteraServicio();
         
-        cafe.llenarCafetera();
+        E2_Cafetera cafe = cs.llenarCafetera();
         
-        cafe.servirTaza(1);
+        cs.servirTaza(cafe, 1);
         
-        cafe.vaciarCafetera();
+        cs.vaciarCafetera(cafe);
         
-        cafe.agregarCafe(10);
-        cafe.servirTaza(10);
+        cs.agregarCafe(cafe, 10);
+        cs.servirTaza(cafe, 10);
     }
 
 }

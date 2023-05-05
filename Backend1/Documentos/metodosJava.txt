@@ -86,3 +86,8 @@ int alea = rand.nextInt(10)+1 : nums randoms de 1 a 10, +1 xq empieza de 0.
 JPasswordField pwd = new JPasswordField(); : declaramos el metodo.
 JOptionPane.showConfirmDialog(null, pwd, "Enter Password",JOptionPane.OK_CANCEL_OPTION); : pwd permite ocultar lo que ingresa el usuario.
 System.out.println(pwd.getPassword()); : con getPassword obtenemos lo ingresado, retorna char.
+
+Arrays.sort(letras) : ordena de menor a mayor.    
+Arrays.sort(letras, Comparator.reverseOrder()) : ordena de mayor a menor.
+
+List<Object> recetas = new ArrayList<Object>() : array infinito.

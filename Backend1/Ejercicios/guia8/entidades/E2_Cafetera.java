@@ -22,7 +22,7 @@ Programa Nespresso. Desarrolle una clase Cafetera en el paquete Entidades con lo
 4-Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo recibe y se añade a la cafetera la cantidad de café indicada.
 */
 public class E2_Cafetera {
-    static Scanner leer = new Scanner(System.in);
+    static Scanner leerCaf = new Scanner(System.in);
 
     private final int capacidadMaxima = 10;
     private int cantidadActual;

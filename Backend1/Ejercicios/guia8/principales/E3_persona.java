@@ -29,10 +29,13 @@ Por último, guardaremos los resultados de los métodos calcularIMC y esMayorDeE
         
         for (int i = 0; i < 4; i++) {
             E3_PersonaServicio pers = new E3_PersonaServicio();
-            personas[i] = pers.crearPersona();
+            
+            E3_Persona persona = pers.crearPersona();
+            
+            personas[i] = persona;
             
             System.out.println("*** Persona N°" + (i+1) + " ***");
-            switch (pers.calcularIMC()) {
+            switch (pers.calcularIMC(persona)) {
                 case 0:
                     System.out.println("La persona tiene sobrepeso.");
                     acuIMC[0]++;
@@ -47,7 +50,7 @@ Por último, guardaremos los resultados de los métodos calcularIMC y esMayorDeE
                     break;
             }
             
-            if (pers.esMayorDeEdad()) {
+            if (pers.esMayorDeEdad(persona)) {
                 System.out.println("Es mayor de edad.");
                 acuEdad[0]++;
             }else{

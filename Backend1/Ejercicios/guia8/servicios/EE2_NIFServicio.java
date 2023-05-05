@@ -28,19 +28,20 @@ En NIFService se dispondrá de los siguientes métodos:
 		11			B
 */
 public class EE2_NIFServicio {
-    static Scanner leer = new Scanner(System.in);
-    EE2_NIF nif = new EE2_NIF();
-    
     private static final char letrasNIF[] = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
     
-    public void crearNif(){
+    public EE2_NIF crearNif(Scanner leerNS){
+        EE2_NIF nif = new EE2_NIF();
+        
         System.out.println("Ingrese su DNI:");
-        nif.setDNI(leer.nextLong());
-        System.out.println((int)nif.getDNI() % 23);
+        nif.setDNI(leerNS.nextLong());
+        
         nif.setLetra(letrasNIF[(int)nif.getDNI() % 23]);
+        
+        return nif;
     }
     
-    public void mostrar(){
+    public void mostrar(EE2_NIF nif){
         System.out.printf("NIF: %d-%c%n", nif.getDNI(), nif.getLetra());
     }
 }

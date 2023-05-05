@@ -3,6 +3,7 @@
 ENTRADA Y SALIDA POR CONSOLA: 
 
 Scanner entra = new Scanner(System.in) : declaracion para usar la entra de escaner.
+Scanner entra = new Scanner(System.in).useDelimiter("\n") : resolver problema con next().
 int num = entra.nextInt() : permite ingresar un num.
 double decimal = entra.nextDouble() : permite ingresar un decimal.
 String frase = entra.nextLine() : permite ingresar una frase.

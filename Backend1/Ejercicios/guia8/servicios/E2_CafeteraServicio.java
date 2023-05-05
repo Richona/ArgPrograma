@@ -23,14 +23,17 @@ Programa Nespresso. Desarrolle una clase Cafetera en el paquete Entidades con lo
 4-Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo recibe y se añade a la cafetera la cantidad de café indicada.
 */
 public class E2_CafeteraServicio {
-    static Scanner leer = new Scanner(System.in);
-    E2_Cafetera caf = new E2_Cafetera();
+    static Scanner leerCafSer = new Scanner(System.in);
     
-    public void llenarCafetera(){
+    public E2_Cafetera llenarCafetera(){
+        E2_Cafetera caf = new E2_Cafetera();
+        
         caf.setCantidadActual(caf.getCapacidadMaxima());
+        
+        return caf;
     }
     
-    public void servirTaza(int taza){
+    public void servirTaza(E2_Cafetera caf, int taza){
         if (taza <= caf.getCantidadActual()) {
             System.out.println("Se lleno la taza :D");
             caf.setCantidadActual(caf.getCantidadActual() - taza);
@@ -40,11 +43,11 @@ public class E2_CafeteraServicio {
         }
     }
     
-    public void vaciarCafetera(){
+    public void vaciarCafetera(E2_Cafetera caf){
         caf.setCantidadActual(0);
     }
     
-    public void agregarCafe(int cant){
+    public void agregarCafe(E2_Cafetera caf, int cant){
         if ((caf.getCantidadActual() + cant) > caf.getCapacidadMaxima()) {
             System.out.println("Limite excedido");
             caf.setCantidadActual(caf.getCapacidadMaxima());

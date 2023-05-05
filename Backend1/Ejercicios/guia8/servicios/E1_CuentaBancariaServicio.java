@@ -25,9 +25,11 @@ Agregar la clase CuentaBancariaServicio en el paquete Servicios que contenga:
 public class E1_CuentaBancariaServicio {
     static Scanner leer = new Scanner(System.in);
 
-    E1_CuentaBancaria cuenta = new E1_CuentaBancaria();
     
-    public void crearCuenta(){
+    
+    public E1_CuentaBancaria crearCuenta(){
+        E1_CuentaBancaria cuenta = new E1_CuentaBancaria();
+        
         System.out.println("*** DATOS DE LA CUENTA ***");
         System.out.println("Numero de cuenta:");
         cuenta.setNumeroCuenta(leer.nextInt());
@@ -35,9 +37,10 @@ public class E1_CuentaBancariaServicio {
         cuenta.setDniCliente(leer.nextLong());
 //        System.out.println("Saldo actual:");
 //        cuenta.setSaldoActual(leer.nextDouble());
+        return cuenta;
     }
     
-    public void ingresar(double dinero){
+    public void ingresar(E1_CuentaBancaria cuenta, double dinero){
         if (dinero >= 0) {
             cuenta.setSaldoActual(cuenta.getSaldoActual() + dinero);
         }else{
@@ -45,7 +48,7 @@ public class E1_CuentaBancariaServicio {
         }
     }
     
-    public void retirar(double dinero){
+    public void retirar(E1_CuentaBancaria cuenta,double dinero){
         if (dinero <= cuenta.getSaldoActual()) {
             cuenta.setSaldoActual(cuenta.getSaldoActual() - dinero);
         }else{
@@ -55,7 +58,7 @@ public class E1_CuentaBancariaServicio {
         }
     }
     
-    public void extraccionRapida(){
+    public void extraccionRapida(E1_CuentaBancaria cuenta){
         if (cuenta.getSaldoActual() > 0) {
             cuenta.setSaldoActual(cuenta.getSaldoActual() * 0.8);
         }else{
@@ -63,11 +66,11 @@ public class E1_CuentaBancariaServicio {
         }
     }
     
-    public void consultarSaldo(){
+    public void consultarSaldo(E1_CuentaBancaria cuenta){
         System.out.println("Saldo actual: " + cuenta.getSaldoActual());
     }
     
-    public void consultarDatos(){
+    public void consultarDatos(E1_CuentaBancaria cuenta){
         System.out.println("Numero de cuenta: " + cuenta.getNumeroCuenta() + " | Numero de dni: " + cuenta.getDniCliente());
     }
     

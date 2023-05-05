@@ -1,4 +1,5 @@
 package guia8.principales;
+import guia8.entidades.E1_CuentaBancaria;
 import guia8.servicios.E1_CuentaBancariaServicio;
 import java.util.Random;//numeros aleatorios.
 import javax.swing.JOptionPane;//entrada y salida de datos en modal.
@@ -28,20 +29,20 @@ Agregar la clase CuentaBancariaServicio en el paquete Servicios que contenga:
     static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
-        E1_CuentaBancariaServicio cuenta = new E1_CuentaBancariaServicio();
-
-        cuenta.crearCuenta();
+        E1_CuentaBancariaServicio cs = new E1_CuentaBancariaServicio();
         
-        cuenta.ingresar(200);
-        cuenta.consultarSaldo();
+        E1_CuentaBancaria cuenta = cs.crearCuenta();
         
-        cuenta.retirar(100);
-        cuenta.consultarSaldo();
+        cs.ingresar(cuenta, 200);
+        cs.consultarSaldo(cuenta);
         
-        cuenta.extraccionRapida();
-        cuenta.consultarSaldo();
+        cs.retirar(cuenta, 100);
+        cs.consultarSaldo(cuenta);
         
-        cuenta.consultarDatos();
+        cs.extraccionRapida(cuenta);
+        cs.consultarSaldo(cuenta);
+        
+        cs.consultarDatos(cuenta);
     }
 
 }

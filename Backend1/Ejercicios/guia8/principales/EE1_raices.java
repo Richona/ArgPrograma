@@ -1,4 +1,5 @@
 package guia8.principales;
+import guia8.entidades.EE1_Raices;
 import guia8.servicios.EE1_RaicesServicio;
 import java.util.Random;//numeros aleatorios.
 import javax.swing.JOptionPane;//entrada y salida de datos en modal.
@@ -34,8 +35,9 @@ Nota: Fórmula ecuación 2o grado: (-b ± √((b^2) - (4 * a * c))) / (2 * a) So
     public static void main(String[] args) {
         EE1_RaicesServicio r = new EE1_RaicesServicio();
         
-        r.crearCalculo();
-        r.calcular();
+        EE1_Raices raiz = r.crearCalculo();
+        
+        r.calcular(raiz);
     }
 
 }

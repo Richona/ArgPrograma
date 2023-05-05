@@ -24,9 +24,9 @@ public class E3_PersonaServicio {
 
     static Scanner leer = new Scanner(System.in);
     static Random rand = new Random();
-    E3_Persona pers = new E3_Persona();
+    
 
-    public boolean esMayorDeEdad() {
+    public boolean esMayorDeEdad(E3_Persona pers) {
         return pers.getEdad() >= 18;
     }
 
@@ -56,6 +56,9 @@ public class E3_PersonaServicio {
 //
 //        System.out.println("Altura:");
 //        pers.setAltura(leer.nextDouble());
+
+        E3_Persona pers = new E3_Persona();
+        
         pers.setNombre("sadsa");
         pers.setSexo('H');
         pers.setEdad(rand.nextInt(99) +1);
@@ -68,7 +71,7 @@ public class E3_PersonaServicio {
         return pers;
     }
 
-    public int calcularIMC() {
+    public int calcularIMC(E3_Persona pers) {
         double calculo = pers.getPeso() / Math.pow(pers.getAltura(), 2);
         int retorno;
 

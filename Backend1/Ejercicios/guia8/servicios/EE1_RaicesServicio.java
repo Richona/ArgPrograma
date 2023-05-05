@@ -27,9 +27,11 @@ public class EE1_RaicesServicio {
     static Scanner leer = new Scanner(System.in);
     static Random rand = new Random();
     
-    EE1_Raices r = new EE1_Raices();
     
-    public void crearCalculo(){
+    
+    public EE1_Raices crearCalculo(){
+        EE1_Raices r = new EE1_Raices();
+        
 //        System.out.println("Ingrese a, b y c para buscar raices.");
 //        r.setA(leer.nextDouble());
 //        r.setB(leer.nextDouble());
@@ -41,39 +43,40 @@ public class EE1_RaicesServicio {
         System.out.println("B:" + r.getB());
         r.setC(rand.nextInt(10));
         System.out.println("C:" + r.getC());
+        
+        return r;
     }
 
-    public double getDiscriminante(){
-        System.out.println(Math.pow(r.getB(), 2) - 4 * r.getA() * r.getC());
+    public double getDiscriminante(EE1_Raices r){
         return Math.pow(r.getB(), 2) - 4 * r.getA() * r.getC();
     }
     
-    public boolean tieneRaices(){
-        return getDiscriminante() > 0;
+    public boolean tieneRaices(EE1_Raices r){
+        return getDiscriminante(r) > 0;
     }
     
-    public boolean tieneRaiz(){
-        return getDiscriminante() == 0;
+    public boolean tieneRaiz(EE1_Raices r){
+        return getDiscriminante(r) == 0;
     }
     
-    public void obtenerRaices(){
-        if (tieneRaices()) {
-            System.out.printf("Raiz 1: %.2f\n", (-(r.getB()) - Math.sqrt(getDiscriminante())) / (2 * r.getA()));
-            System.out.printf("Raiz 2: %.2f\n", (-(r.getB()) + Math.sqrt(getDiscriminante())) / (2 * r.getA()));
+    public void obtenerRaices(EE1_Raices r){
+        if (tieneRaices(r)) {
+            System.out.printf("Raiz 1: %.2f\n", (-(r.getB()) - Math.sqrt(getDiscriminante(r))) / (2 * r.getA()));
+            System.out.printf("Raiz 2: %.2f\n", (-(r.getB()) + Math.sqrt(getDiscriminante(r))) / (2 * r.getA()));
         }
     }
     
-    public void obtenerRaiz(){
-        if (tieneRaiz()) {
+    public void obtenerRaiz(EE1_Raices r){
+        if (tieneRaiz(r)) {
             System.out.printf("Raices: %.2f\n", (-(r.getB()) / (2 * r.getA())));
         }
     }
     
-    public void calcular(){
-        if (tieneRaices()) {
-            obtenerRaices();
-        }else if(tieneRaiz()){
-            obtenerRaiz();
+    public void calcular(EE1_Raices r){
+        if (tieneRaices(r)) {
+            obtenerRaices(r);
+        }else if(tieneRaiz(r)){
+            obtenerRaiz(r);
         }else{
             System.out.println("No existe solucion :C.");
         }
