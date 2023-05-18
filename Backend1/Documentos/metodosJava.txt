@@ -78,6 +78,76 @@ floor(double a) : Da entero cercano por debajo.
 
 ********************************************************************************
 
+METODOS ARRAY:
+
+Arrays.equals(arreglo1, arreglo2) //Retorna true o false, si dos arreglos son iguales.
+
+Arrays.fill(arreglo, variable) //inicializa todo el array con la variable.
+
+Arrays.fill(arreglo, int desde, int  hasta, variable) //Inializa desde y hasta.
+
+Arrays.sort(arreglo) //ordeba de manera ascendente.
+
+Arrays.sort(arreglo, int desde, int hasta) // ordena asc desde y hasta.
+    
+Arrays.sort(arreglo, Comparator.reverseOrder()) //ordena descendente.Funciona con objetos: String, Integer, Object.
+
+Arrays.toString(arreglo)//Retorna el arreglo en String. Ej: "[1,2,3]".
+
+********************************************************************************
+
+METODOS INT:
+
+Integer(String s) //parsea string a int.
+
+compareTo(entero, otroEntero) //Compara, retorna 0 -> iguales; -n -> primer numero es menor; n -> primer numero mayor.
+
+doubleValue() //parsea int a double.
+
+equals(Object obj) //Compara, retorna true si son iguales, y false si no.
+
+parseInt(String s) //parsea string a int.
+
+toString() //Retorna int en cadena.
+
+********************************************************************************
+
+METODOS DATE:
+
+Date() //Retorna la fecha actual.
+
+Date(int dia, int mes, int año) //Retorna la fecha ingresada sumando 1900 al año.
+
+after(Date fecha2) //Retorna true si la fecha esta despues de la fecha del parametro.
+
+before(Date fecha2) //Retorna true si la fecha esta antes de la fecha del parametro.
+
+compareTo(Date fecha) //Compara fechas, retorna 0 -> iguales; -n -> primer numero es menor; n -> primer numero mayor.
+
+equals(Object obj) //Compara, true si son iguales, si no false.
+
+getDay() //Retorna dia de la semana. Ej: 0 -> lunes, 1 -> martes, ..., 6 -> domingo.
+
+getDate() //Retorna el numero del dia de la fecha.
+
+getMonth() //Retorna el mes de la fecha.
+
+getYear() //Retorna el año de la fecha.
+
+getTime() //Retorna la fecha en milisegundos a partir del “epoch” (1970).
+
+setDate(int dia) //Asigna un día a la fecha.
+
+setMonth(int mes) //Asigna un mes a la fecha.
+
+setYear(int anio) //Asigna un año a la fecha.
+
+setTime(long time) //Asigna la fecha en milisegundos a partir del “epoch” (1970).
+
+toString() //Retorna la fecha en una cadena de caracteres.
+
+********************************************************************************
+
 METODOS IMPORTABLES UTILES:
 
 Random rand= new Random() : declaramos el metodo.
@@ -86,8 +156,5 @@ int alea = rand.nextInt(10)+1 : nums randoms de 1 a 10, +1 xq empieza de 0.
 JPasswordField pwd = new JPasswordField(); : declaramos el metodo.
 JOptionPane.showConfirmDialog(null, pwd, "Enter Password",JOptionPane.OK_CANCEL_OPTION); : pwd permite ocultar lo que ingresa el usuario.
 System.out.println(pwd.getPassword()); : con getPassword obtenemos lo ingresado, retorna char.
-
-Arrays.sort(letras) : ordena de menor a mayor.    
-Arrays.sort(letras, Comparator.reverseOrder()) : ordena de mayor a menor.
 
 List<Object> recetas = new ArrayList<Object>() : array infinito.
