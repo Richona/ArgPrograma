@@ -1,6 +1,7 @@
 ****************
 TIPOS DE DATOS | VALORES POR DEFECTO:
 
+***PRIMITIVOS***
 byte : -128 a 127. Default 0
 
 short : -32,768 a 32,767. Default 0
@@ -17,9 +18,18 @@ boolean : true o false. Default false
 
 char : 'a' un solo caracter con comillas simples. Default '\u0000'
 
-String : "hola mundo" cadena de caracteres. Default Null
-
 Objetos : Default Null
 
+*** OBJETOS***
+String : "hola mundo" cadena de caracteres. Default Null
 
+Integer :
+
+Double : 
+
+Long : 
+
+Character :
+
+Boolean :
 ****************

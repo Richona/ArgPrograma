@@ -147,6 +147,89 @@ setTime(long time) //Asigna la fecha en milisegundos a partir del “epoch” (1
 toString() //Retorna la fecha en una cadena de caracteres.
 
 ********************************************************************************
+METODOS COLLECIONES:
+
+***Metodos listas y conjuntos***
+add(T) //agrega en listas y conjuntos.
+
+remove(int indice) //elimina indice. Solo funciona en listas.
+
+remove(elemento) //elimina primer elemento hallado. Funciona en conjuntos y listas.
+
+get(int indice) //retorna elemento del indice.
+
+set(int indice, elemento) //guarda elemento en el indice.
+
+contains(elemento) //retorna true si esta el elemento, si no false.
+
+
+***Metodos mapas***
+put(llave, valor) //agrega en mapas.
+
+remove(llave) //elimina el elemento con la llave. Solo funciona en mapas.
+
+containsKey(llave) //retorna true si encuentra la llave, si no false.
+
+containsValue(valor) //retorna true si encuentra el valor, si no false.
+
+get(llave) //retorna elemento de la llave ingresada.
+
+values() //retorna lista con todos los valores del mapa.
+
+
+***Metodos general***
+clear() //borra todos los elementos.
+
+size() // retorna tamaño.
+
+isEmpty() //retorna true si esta vacio, si no false.
+
+iterator() //permite recorrer, acceder y eliminar algun elemento de la coleccion, lo ultimo en mapas no se puede.
+ej.ArrayList<String> lista = new ArrayList();
+Iterator it = lista.iterator(); //creamos iterator.
+while(it.hasNext()){//hasNext devuelve true o false.
+	if(it.next.equals("hola")){//next devuelve elemento.
+		it.remove();//elimina elemento.
+	}	
+}
+
+
+***Metodos Collections***
+
+Collections.sort(coleccion) //ordena lista de manera asc. Conjuntos deben convertirse a listas y mapa hashMap a treeMap que se ordena solo.
+
+Collections.fill(List<T> lista, Objet objeto) //reemplaza todos los elementos con un elemento.
+
+Collections.frequency(Collection<T> coleccion, Object objeto) //retorna cantidad de veces que se encuentra.
+
+Collections.replaceAll(List<T> lista, T valorViejo, T valorNuevo) //reemplaza todas las aparaciones del elemento viejo por el nuevo.
+
+Collections.reverse(List<T> lista) //invierte orden.
+
+Collections.reverseOrder() //retorna Comparator que invierte orden de los elementos de una coleccion.
+
+Collections.shuffle(List<T> lista) //ordena lista aleatoria.
+
+Collections.sort(List<T> lista) //ordena lista asc.
+
+
+***Ordenar colecciones de objetos***
+ej. ENTIDAD
+public static Comparator<EP1_Libro> compararTitulo = new Comparator<EP1_Libro>() {
+        @Override
+        public int compare(EP1_Libro l1, EP1_Libro l2) {
+            return l1.getTitulo().compareTo(l2.getTitulo());
+	}
+};	
+. Main
+ArrayList<EP1_Libro> libros = new ArrayList();
+libros.sort(EP1_Libro.compararTitulo);
+.HashSet y HashMap deben convertirse a ArrayList.
+.TreeSet lo pasamos como parametro.
+ej.TreeSet<EP1_Libro> libros = new TreeSet(EP1_Libro.compararTitulo);
+
+
+********************************************************************************
 
 METODOS IMPORTABLES UTILES:
 
@@ -156,5 +239,3 @@ int alea = rand.nextInt(10)+1 : nums randoms de 1 a 10, +1 xq empieza de 0.
 JPasswordField pwd = new JPasswordField(); : declaramos el metodo.
 JOptionPane.showConfirmDialog(null, pwd, "Enter Password",JOptionPane.OK_CANCEL_OPTION); : pwd permite ocultar lo que ingresa el usuario.
 System.out.println(pwd.getPassword()); : con getPassword obtenemos lo ingresado, retorna char.
-
-List<Object> recetas = new ArrayList<Object>() : array infinito.

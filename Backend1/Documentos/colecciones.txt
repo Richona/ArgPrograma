@@ -1,0 +1,56 @@
+****************************************
+LISTAS: 
+.Guardan elementos duplicados.
+.Se recorre con forE
+
+***ArrayList*** 
+ej. ArrayList<Integer> nA = new ArrayList();
+.Tamaño dinamico
+
+
+***LinkedList***
+ej. LinkedList<Integer> nB = new LinkedList();
+.Lista doble enlace, moverse hacia atras y adelante.
+
+
+
+****************************************
+CONJUNTOS: 
+.guardan elementos unicos.
+.Se recorre con forE
+
+***HashSet***
+ej. HashSet<String> nombres = new HashSet();
+.Encripta el valor para hacerlo unico.
+.Caracteres alfanumericos con longitud fija.
+.No estan ordenados.
+
+***TreeSet***
+ej. TreeSet<Integer> n = new TreeSet();
+.Estructura de arbol.
+.Elementos ordenados.
+.Valores unicos.
+.Agregar y eliminar lento.
+
+***LinkedHashSet***
+ej. LinkedHashSet<String> f = new LinkedHashSet();
+.Lista hash vinculada.
+.Proporciona el orden de insercion. 
+
+
+****************************************
+MAPAS: 
+.Llave y valor, la primera es unica y la segunda no.
+.Se recorre con forM
+
+***HashMap***
+ej. HashMap<Integer, String> pA = new HashMap();
+.encripta la llave para hacerla unica.
+
+***TreeMap***
+ej. TreeMap<Integer, String> pB = new TreeMap();
+.Ordena de manera asc llaves.
+
+***LinkedHashMap***
+ej. LinkedHashMap<Integer, String> pC = new LinkedHashMap();
+.HashMap que conserva orden de insercion.
