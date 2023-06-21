@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="E2">
+  <ClassDiagramComponents>
+    <Class name="Revolver" package="" visibility="public" xPosition="28.0" yPosition="569.0">
+      <Fields>
+        <Field name="posActual" type="int" visibility="private"/>
+        <Field name="posAgua" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarRevolver" returnType="void" visibility="public"/>
+        <Method name="mojar" returnType="boolean" visibility="public"/>
+        <Method name="siguienteChorro" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="" visibility="public" xPosition="13.0" yPosition="29.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="disparo" returnType="Revolver" visibility="public">
+          <Argument type="Revolver" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Juego" package="" visibility="public" xPosition="8.0" yPosition="292.0">
+      <Fields>
+        <Field name="jugadores" type="ArrayList&lt;Jugador&gt;" visibility="private"/>
+        <Field name="revolver" type="Revolver" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarJuego" returnType="void" visibility="public"/>
+        <Method name="ronda" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="revolver" source="Juego" target="Revolver" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="jugadores" source="Juego" target="Jugador" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

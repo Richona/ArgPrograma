@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="sdfs">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" xPosition="300.0" yPosition="263.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="dni" type="Dni" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Dni" package="" visibility="public" xPosition="684.0" yPosition="273.0">
+      <Fields>
+        <Field name="serie" type="char" visibility="private"/>
+        <Field name="num" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="" source="Persona" target="Dni" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EE4">
+  <ClassDiagramComponents>
+    <Class name="Alumno" package="" visibility="public" xPosition="20.0" yPosition="133.0">
+      <Fields>
+        <Field name="nombreCompleto" type="String" visibility="private"/>
+        <Field name="dni" type="Integer" visibility="private"/>
+        <Field name="cantVotos" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Simulador" package="" visibility="public" xPosition="111.0" yPosition="375.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generadorNombres" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="generadorDnis" returnType="ArrayList&lt;Integer&gt;" visibility="public"/>
+        <Method name="crearAlumnos" returnType="HashMap&lt;IntegerAlumno&gt;" visibility="public"/>
+        <Method name="mostrarAlumnos" returnType="void" visibility="public"/>
+        <Method name="votacion" returnType="HashSet&lt;Alumno&gt;" visibility="public"/>
+        <Method name="mostrarAlumnosVotos" returnType="void" visibility="public"/>
+        <Method name="recuentoVotos" returnType="void" visibility="public"/>
+        <Method name="crearFacilitadores" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Voto" package="" visibility="public" xPosition="279.0" yPosition="143.0">
+      <Fields>
+        <Field name="alumno" type="Alumno" visibility="private"/>
+        <Field name="listaVotos" type="HashSet&lt;Alumno&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="alumno" source="Voto" target="Alumno" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Alumno" target="Simulador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaVotos" source="Voto" target="Alumno" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <UseRelation name="" source="Voto" target="Simulador" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

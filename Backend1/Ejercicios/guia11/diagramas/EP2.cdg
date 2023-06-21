@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EP2">
+  <ClassDiagramComponents>
+    <Class name="Jugador" package="" visibility="public" xPosition="490.0" yPosition="180.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="posicion" type="String" visibility="private"/>
+        <Field name="num" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Equipo" package="" visibility="public" xPosition="144.0" yPosition="208.0">
+      <Fields>
+        <Field name="jugadores" type="ArrayList&lt;Jugador&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="" source="Equipo" target="Jugador" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

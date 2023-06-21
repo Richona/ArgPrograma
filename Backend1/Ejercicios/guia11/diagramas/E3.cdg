@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="E3">
+  <ClassDiagramComponents>
+    <Class name="Carta" package="" visibility="public" xPosition="158.0" yPosition="179.0">
+      <Fields>
+        <Field name="numero" type="Integer" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Baraja" package="" visibility="public" xPosition="123.0" yPosition="463.0">
+      <Fields>
+        <Field name="cartasDisponibles" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+        <Field name="cartasMonton" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearBaraja" returnType="Baraja" visibility="public"/>
+        <Method name="barajar" returnType="void" visibility="public"/>
+        <Method name="siguienteCarta" returnType="Carta" visibility="public"/>
+        <Method name="cartasDisponibles" returnType="boolean" visibility="public"/>
+        <Method name="darCartas" returnType="boolean" visibility="public"/>
+        <Method name="cartasMonton" returnType="boolean" visibility="public"/>
+        <Method name="mostrarBaraja" returnType="boolean" visibility="public"/>
+        <Method name="juego" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cartas" source="Baraja" target="Carta" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

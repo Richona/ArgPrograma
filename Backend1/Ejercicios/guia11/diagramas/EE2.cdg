@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EE2">
+  <ClassDiagramComponents>
+    <Class name="Cine" package="" visibility="public" xPosition="47.0" yPosition="296.0">
+      <Fields>
+        <Field name="pelicula" type="Pelicula" visibility="private"/>
+        <Field name="sala" type="Asiento[][]" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="espectadores" type="ArrayList&lt;Espectador&gt;" visibility="private"/>
+        <Field name="asientosDisponibles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Pelicula" package="" visibility="public" xPosition="86.0" yPosition="37.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="edadMinima" type="int" visibility="private"/>
+        <Field name="director" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Espectador" package="" visibility="public" xPosition="86.0" yPosition="555.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="dinero" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Asiento" package="" visibility="public" xPosition="455.0" yPosition="315.0">
+      <Fields>
+        <Field name="num" type="int" visibility="private"/>
+        <Field name="letra" type="char" visibility="private"/>
+        <Field name="ocupado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="pelicula" source="Cine" target="Pelicula" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="espectadores" source="Cine" target="Espectador" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="sala" source="Cine" target="Asiento" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

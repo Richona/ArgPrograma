@@ -1,0 +1,63 @@
+Un objeto se comunica con otro para que conozca atributos, operaciones y relaciones de otras clases, esto es mediante una referencia a otra clase mediante atributo.
+
+*******************************************
+ASOCIACION:
+.relacion mas simple.
+
+.Dos tipos:
+*** bidireccional o inversa ***
+-se conocen entre si los objetos.
+-no es la mas recomendada segun el mascotero.
+-ej: un auto puede tener un dueño, y un dueño muchos autos.
+*** unidireccional ***
+-solo un objeto conoce al otro.
+
+.Dos formas de relaciones:
+*** agregacion ***
+-ambos objetos son independientes.
+-pueden sobrevivir individualmente.
+-si borras uno, no afecta al otro.
+-ej: una empresa queda en la quiebra, pero los clientes aun siguen.
+*** composicion ***
+-relacion de vida.
+-si el objeto padre muere, tambien lo hace el hijo.
+-relacion dependiente.
+-ej: una empresa queda en la quiebra, y los empleados desaparecen.
+
+.Tipos de relaciones:
+*** uno a uno ***
+-relacion de un objeto con otro.
+*** uno a muchos ***
+-relacion de un objeto a muchos objetos de una clase.
+*** cero a uno ***
+-relacion de un objeto con ningun u otro objeto.
+*** 0 a muchos ***
+-relacion de un objeto a ningun objeto o muchos objetos.
+
+***********************************************
+COSAS VISTAS EN LOS VIDEOS.
+
+*** ASOCIACION REFLEXIVA O RECURSIVA ***
+.relacion de agregacion.
+.pueder cualquier tipo de relacion.
+.Ej: una persona tiene muchos amigos, un amigo es persona, no seria necesario realizar la clase amigo, sino hacer una asociacion recursiva.
+
+*** ENUM ***
+.lista de constantes.
+.empieza desde 0 como un array.
+.es otro archivo "JAVA ENUM".
+.se escribe en mayusculas y separadas por comas. ej:
+public enum Raza{
+	BEAGLE, COCKER, PITBULL, BORDER_COLLIE;
+}
+.Se puede recorrer con un forE. ej:
+for(Raza aux : Raza.values()){
+	sout(aux);
+}
+.Para comparar un enum con otro tipo de dato se debera convertir. Ej: si el dato es String, aplicamos toString().
+
+*** GENERICOS ***
+.<T> representa que es generico. 
+.La clase funciona desde antes de especificar el tipo de dato.
+.ej: una mascota puede ser de cualquier tipo de raza, necesitamos que funcione antes de especificarle la raza.
+
