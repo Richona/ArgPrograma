@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EE1">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="" visibility="public" xPosition="176.0" yPosition="723.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+        <Field name="fechaAlquiler" type="date" visibility="private"/>
+        <Field name="fechaDevolucion" type="date" visibility="private"/>
+        <Field name="posAmarre" type="int" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="precioFinal" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="" visibility="public" isAbstract="true" xPosition="176.0" yPosition="481.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="eslora" type="int" visibility="private"/>
+        <Field name="anioFabricacion" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="" visibility="public" isFinal="true" xPosition="1.0" yPosition="301.0">
+      <Fields>
+        <Field name="numMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearVelero" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Motor" package="" visibility="public" xPosition="176.0" yPosition="180.0">
+      <Fields>
+        <Field name="potenciaCV" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearMotor" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Yate" package="" visibility="public" xPosition="374.0" yPosition="292.0">
+      <Fields>
+        <Field name="potenciaCV" type="double" visibility="private"/>
+        <Field name="numCamarotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearYate" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Yate" target="Barco"/>
+    <HasRelation name="barco" source="Alquiler" target="Barco" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Motor" target="Barco"/>
+    <IsRelation name="is" source="Velero" target="Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

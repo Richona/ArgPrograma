@@ -1,0 +1,189 @@
+*** HERENCIA ***
+-Una clase hereda atributos, metodos, etc, de otra clase
+-SuperClase -> padre/madre
+-SubClases -> hijas
+-Permite reutilizar codigo.
+-A traves de la palabra extends se usa la herencia. EJ:
+public class subClase extends SuperClase{
+}
+
+*** HERENCIA Y ATRIBUTOS ***
+-La subClase puede tener sus propios atributos.
+-En superClases se usa protected en atributos para usarlos sin get y set. EJ:
+public class Persona {
+	protected String nombre;
+	protected Integer edad;
+	protected Integer documento;
+}
+public class Alumno extends Persona{
+	private String materia;
+}
+
+
+*** HERENCIA Y CONSTRUCTORES ***
+-No se heredan.
+-Se utilizan con la palabra super.EJ:
+public class Persona {
+	protected String nombre;
+	protected Integer edad;
+	protected Integer documento;
+
+	public Persona(String nombre, Integer edad, Integer documento){
+		this.nombre = nombre;
+		this.edad = edad;
+		this.documento = documento;
+	}
+}
+public class Alumno extends Persona{
+	private String materia;
+
+	public Alumno(String materia, String nombre, Integer edad, Integer documento){
+		super(nombre, edad, documento);
+		this.materia = materia;
+	}
+}
+-La palabra super tambien sirve para llamar atributos y metodos de la superclase. EJ:
+super.atributoClasePadre;
+super.metodoClasePadre;
+
+
+*** HERENCIA Y METODOS ***
+-Se heredan.
+-Pueden sobreescribirse gracias a poner @Override arriba del metodo. Se debe llamar igual en la subclase como en la superclase.
+-Se sobreescriben para agregar o modificar la funcionalidad. EJ:
+class Persona{
+	public void codear(){
+		sout("una persona comun no codea");
+	}
+}
+
+class Alumno extends Persona{
+	@Override
+	public void codear(){
+		sout("esta aprendiendo");
+	}
+}
+-En los metodos tambien podemos poner protected, para que solo las subclases puedan ejecutarlos.
+
+
+*** POLIMORFISMO ***
+-muchas formas.
+-Metodo definido en la superclase y que las subclases tengan el mismo metodo, pero con distintas funcionalidades.
+
+*** TIPOS DE HERENCIA ***
+-Herencia unica: 
+.Una subclase hereda las caracteristicas de una superclase. 
+.EJ: A sirve como base de la clase B.
+
+-Herencia jerarquica: 
+.Una superclase tiene varias subclases. 
+.Ej: A es base de B, C y D.
+
+-Herencia multinivel: 
+.Clase A sera base de clase B, y la ultima sera base de la clase C.
+
+-Herencia multiple: 
+.Una clase puede tener mas de una superclase. En java esto solo es posible a traves de interfaces.
+
+
+*** MODIFICADORES DE CLASES Y METODOS ***
+-Clases finales: 
+.al marcarla final impedimos que tengan hijos. 
+.Ej: public final class Animal{}
+
+-Metodos finales: 
+.Al marcar final un metodo evitamos que las subclases puedan sobreescribirlo.
+.Ej: public final void metodo(){}
+
+-Clases abstractas:
+.No se pueden crear objetos.
+.Generalmente se usa en superclases para que no puedan instanciarse.
+.Si la clase al menos tiene un metodo abstracto debera ser marcada como abstracta.
+.Ej: public abstract class Animal{}
+
+-Metodos abstractos:
+.Metodo declarado pero no implementado.
+.Se declara en la superclase y se heredan a subclases donde le daran su funcionamiento.
+.Ej: 
+abstract class Persona {
+	public abstract void codear();
+}
+
+class Alumno extends Persona{
+	@Override
+	public void codear(){
+		sout("Esta aprendiendo");
+	}
+}
+
+
+*** INTERFACES ***
+-Similar a una clase abstracta.
+-Especifica que se debe hacer, pero no como hacerlo.
+-Muchas clases pueden usar una misma interfaz, y una clase puede implementar muchas interfaces.
+-Para crearla se hace asi: 
+public interface nombreInterfaz{}.
+-Se debe hacer como public o no se usa.
+
+*Instanciar*
+-No se puede instanciar.
+
+*Implementar*
+-Para implementar una interfaz se hace asi:
+public class NombreClase implements nombreInterfaz{}
+-Se implementan en la clase, completando los metodos de la interfaz.
+
+*Metodos*
+-Se declaran con solo su tipo de devolucion y firma(nombre de un metodo mas su parametros).
+-Cada clase que implemente la interfaz debe implementar todos sus metodos.
+-Metodos publicos implicitamente.
+-Ej:
+public interface nombreInterfaz{
+	public void metodo();
+	public int sumar();
+}
+
+class nClase implements nInterfaz{
+	@Override
+	public void metodo(){
+		sout("implementacion");
+	}
+
+	@Override
+	public int sumar(){
+		return 2 + 2;
+	}
+}
+
+*Variables*
+-Las variables en las interfaces son implicitamente public y final, ademas deben inicializarse.
+-Son constantes, escritas en mayus.
+-Ej:
+public interface nombreInterfaz{
+	public final int CONSTANTE = 10;
+	public void metodo();
+}
+
+class nClase implements nInterfaz{
+	@Override
+	public void metodo(){
+		sout("La constante tiene un valor de " + CONSTANTE);	
+	}
+}
+-Se llaman desde la clase con su nombre definido en la interfaz.
+
+*******************************************
+COSAS QUE VI EN LOS VIDEOS
+*******************************************
+*** Herencia hibrida *** video: Herencia 1.
+-D hereda de B y C, y estos dos ultimos, heredan de A.
+-No se puede replicar en java.
+
+*** En easyUml el modificador protected se representa con # *** video: Herencia 1.
+
+*** Al cargar datos que sean double ponemos d al final de numero para representar que sea double, si es float ponemos f *** video: Herencia 2.
+
+*** instanceof puede validar de donde salio un dato *** video: herencia 2, min 6
+
+*** De esta forma se implementa variaas interfaces: 
+public class nClase implement nInterfaz1, nInterfaz2 {} *** video: Interfaces, min 7
