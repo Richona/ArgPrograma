@@ -1,0 +1,129 @@
+~~~~~~~~~ EXCEPCION ~~~~~~~~~
+-Evento que interrumpe el flujo de un programa.
+-Cuando algo malo sucede se lanza una excepcion.
+-Lo lanzado lo recibe un manejador de excepciones.
+
+-Situciaciones que provocan una excepcion:
+.No hay memoria.
+.Elemento fuera de rango en array.
+.Ingresar un tipo de dato incorrecto.
+.Error al abrir un fichero.
+.Dividir por 0.
+
+*** JERARQUIA ***
+-La clase THROWABLE es el padre, EXCEPTION y ERROR sus hijos.
+-La excepcion tipo ERROR es cuando algo malo sucede en la maquina. No en tu programa.
+-La excepcion EXCEPTION se relacionan al programa.
+
+
+~~~~~~~~~ MANEJADOR DE EXCEPCIONES ~~~~~~~~~
+-5 palabras clave:
+.TRY: supervisa y puede lanzar
+.CATCH: atrapa lo lanzado. 
+.THROW: lanzar manualmente una excepcion
+.THROWS: arrojar una excepcion desde un metodo
+.FINALLY: codigo que se ejecutara sin importar try 
+
+*** BLOQUE TRY ***
+-Intentar en español.
+-Codigo que puede generar problemas va dentro.
+-Se usa para evitar que el programa colapse.
+-Donde se genere la excepcion se lanzara al catch.
+-Cada bloque try debe asociarse al menos a un catch.
+
+
+*** BLOQUE CATCH ***
+-Atrapar en español.
+-Por cada bloque try puede haber uno o mas bloques catch.
+-Cada catch se encarga de un tipo de excepcion.
+-Al lanzar desde el try pasaria al primer catch, sino entra pasaria al segundo, y asi.
+-No es recomendable usar un solo catch para muchas excepciones.
+
+
+*** METODOS THROWABLE ***
+-Lanzable, arrojable en español.
+-Se utilizan dentro del bloque catch.
+-Dentro del parametro se acceden con un punto.
+
+-Metodos disponibles:
+.getMessage: descripcion del error.
+.fillInStackTrace: seguimiento de pila completo.
+.toString: descripcion completa de la excepcion.
+
+
+*** BLOQUE FINALLY ***
+-Finalmente en español.
+-Se ejecuta sin importar lo que se produzca en el try.
+-Sirve para no repetir codigo.
+
+EJEMPLO TRY | CATCH | METODOS THROWABLE | FINALLY
+try{
+	int division = 10 / 0;
+} catch (ArithmeticExcepction a){
+	sout(a.getMessage);
+	sout(a.fillInStackTrace);
+	sout(a.toString);
+	sout("Error: division por cero");
+} finally{
+	sout("Saliendo del try");
+}
+
+
+*** CLAUSULA THROWS ***
+-Lanza en español.
+-Permiti lanzar excepciones desde un metodo.
+-Obliga a otros metodos a ocuparse de la excepcion
+-Ej:
+public int division() throws Exception{
+	return 10 / 0;
+}
+
+public static void main(String[] args) {
+	try {
+		sout(service.division());
+	} catch (ArithmeticExcepction a) {
+		sout("Error: division por 0");
+	}
+}
+
+
+*** PALABRA THROW ***
+-Lanzar en español.
+-Permite lanzar excepciones.
+-La palabra THROW debe ir seguido del tipo de excepcion.
+-Al lanzarse al try catch, este lo analiza.
+-Al utilizarla en un metodo, debemos poner la clausula THROWS.
+-EJ:
+public void suma() throws Exception{
+        System.out.println("Ingrese numero para sumar: ");
+        int num1 = leer.nextInt();
+        
+        System.out.println("Ingrese otro numero para sumar: ");
+        int num2 = leer.nextInt();
+        
+        if (num2 <= 0) {
+            throw new Exception("Numeros positivos por favor.");
+        }
+        
+        System.out.println(num1 + num2);
+}
+
+public static void main(String[] args) {
+        try {
+            ps.suma();
+        }catch(Exception e){
+            System.out.println(e);
+        }finally{
+            System.out.println("hola");
+        }
+}
+
+
+~~~~~~~~~ TIPOS DE EXCEPCIONES ~~~~~~~~~ 
+-ArithmeticExcepction: division por 0.
+
+-ArrayIndexOutOfBoundsException: array fuera de rango.
+
+-InputMismatchException: letra en lugar de num.
+
+
