@@ -1,0 +1,163 @@
+******************************
+************ JDBC ************
+******************************
+- Java database Connectivity.
+- Interfaces y clases para que apps se conecten a bases de datos.
+- Puede conectar con cualquier sistema de gestion de bases de datos (DBMS), siempre y cuando haya un driver correcto.
+
+*** COMPONENETES JDBC ***
+- JDBC Driver Manager: establece una conexion en la app para conectar la database.
+
+- API JDBC:
+.Conjunto de interfaces y clases.
+.Facilita la comunicacion con la database.
+.Proporciona dos paquetes: java.sql|javax.sql
+.Clases e interfaces principales: 
+*java.sql.DriverManager
+*java.sql.Conenection
+*java.sql.Statement
+*java.sql.ResultSet
+*java.sql.PreparedStatement
+*javax.sql.DataSource
+
+
+*** Driver JDBC ***
+- Implementa interfaces y clases de la API JDBC para un DBMS.
+- El DBMS a usar sera MySql
+- Class.forName("com.mysql.jdbc.Driver"); con esto especificamos el driver.
+- String url= "jdbc:mysql://localhost:3306/biblioteca"; definimos el driver
+
+
+*******************************
+* COMPONENTES DEL API DE JDBC *
+*******************************
+- Driver: enlace de comunicaciones.
+- Connection: Contactar una base de datos.
+- Statement: encapsula una instruccion SQL para la DB.
+- ResultSet: conjunto de filas recuperadas en una consulta.
+
+*** Conexion la DB ***
+- URL de conexion con el nombre del host y la DB.
+- Nombre usuario en la DB.
+- Contraseña usuario en la DB.
+
+- Connection con = DriverManager.getConnection(url, login, password);
+
+
+*****************************
+* OBTENIENDO DATOS DE LA DB *
+*****************************
+- Statement stmt = con.createStatement(); Crear sentencias para realizar consultas.
+
+-executeQuery: Recupera datos devolviendo un objeto resultSet.
+
+-executeUpdate:Inserta, modifica o elimina datos, no devuelde el resultSet
+
+-String sentenciaSQL = "SELECT nombre, apellido FROM alumnos";
+-stmt.executeQuery(sentenciaSQL);
+
+-"SELECT nombre FROM Alumnos WHERE fechaNacimiento = '01-11-1990'"; // date
+
+*** Obtencion de datos ***
+- ResultSet result = stmt.executeQuery(sentenciaSQL); 
+- Devuelve una tabla
+- ResultSet otorga acceso a los datos de las columnas mediante metodos.
+-  En los metodos hay que aclarar el tipo de dato y la posicion de la columna (empezando de 1) o el nombre de la misma.
+String s = rs.getString("nombre");
+String s = rs.getString(2);
+
+- ResultSet.next mueve a la siguiente fila.
+
+- METODOS:
+.getInt() //obtiene entero.
+.getLong() //obtiene long.
+.getDouble() //obtiene double.
+.getBoolean() //obtiene boolean.
+.getString() //obtiene string.
+.getDate() //obtiene Date.
+
+
+******************************
+* OPTIMIZACIÓN DE SENTENCIAS *
+******************************
+PreparedStatement ps = con.prepareStatement("SELECT * FROM nombreTabla WHERE campo2> 1200 AND campo2< 1300");
+
+-Sirve para no repetir codigo.
+
+- El signo de pregunta ? permite parametrizar la sentencia.
+PreparedStatement ps = con.prepareStatement("UPDATE FROM nombreTabla
+SET campo1 = 'valor'
+WHERE campo2 > ? AND campo2 < ?");
+
+- Para dar valor a esos signos aclaramos el tipo de dato, el numero del parametro (empieza de 1) y el valor a dar.
+ps.setInt(1,1200);
+ps.setInt(2,1300);
+
+- Una vez hecho ya se puede ejecutar.
+
+
+************************
+* PATRÓN DE DISEÑO DAO *
+************************
+- Separa la logica de negocio de la logica para acceder a los datos.
+
+* Entidad *
+- Clase que representa una tabla, las columnas seran los atributos.
+
+* Servicio *
+- Logica de negocio, generalmente una por entidad.
+- Obtiene y envia datos a la DB. 
+- Tiene los metodos CRUD.
+
+* DAO *
+- Capa de acceso a datos que oculta la fuente y detalles tecnicos.
+- Clase encargada de comunicarse con la DB.
+- Envia consultas y recupera info.
+
+* EntidadDaoExt *
+- Hereden de DAO.
+- Genera las sentencias para enviar a la clase DAO.
+- Encargada de recibir la info, enviada desde el DAO, para enviarsela al service.
+- Objeto plano que implementa Data Transfer Object (DTO) el cual sirve para transmitir info entre DAO y service.
+
+CADA CLASE TENDRA SU SERVICIO Y SU DAO CORRESPONDIENTE.
+
+*** ORGANIZACION DE CARPETAS ***
+-> Entidades
+	mesa.java
+	silla.java
+-> Main
+	JDBC.java
+-> Persistencia
+	DAO.java
+	mesaDao.java
+	sillaDao.java
+-> Servicios
+	mesaService.java
+	sillaService.java
+
+
+
+********************
+*** COSAS QUE VI ***
+********************
+
+- Buenas practicas declarancion contanstes en persistencia. VIDEO 2 - MIN 6
+
+- Tip del dolape para desactivar warnings molestos. VIDEO 2 - MIN 8
+
+- Tip para desconectar la base. VIDEO 3 - MIN 4
+
+- METODO PARA INSERTAR, ACTUALIZAR Y ELIMINAR. VIDEO 3 - MIN 10
+
+- Metodo para consultar. VIDEO 3 - MIN 11
+
+- USO DEL METODO INSERTAR, ACTUALIZAR Y ELIMINAR EN DAO ESPECIFICO. VIDEO 4 - MIN 7
+
+- USO DEL METODO CONSULTAR TRABAJANDO UN USUARIO. VIDEO 5 - MIN 9
+
+- USO DEL METODO CONSULTAR TRABAJANDO VARIOS USUARIOS. VIDEO 5 - MIN 12
+
+- Funcionamiento de DAO, services y entidades en conjunto. VIDEO 6.
+
+- CONSULTA A 2 TABLAS RELACIONADAS. VIDEO 7 - MIN 8

@@ -207,6 +207,10 @@ SELECT * FROM cliente c WHERE NOT EXISTS (SELECT *  FROM pago p WHERE c.codigo_c
 
 
 /* DATE */
+SELECT CURDATE(); -- TRAE LA FECHA ACTUAL CALENDARIO
+
+SELECT NOW(); -- TRAE LA FECHA ACTUAL CALENDARIO CON HORA
+
 select * from pago where year(fecha_pago) = 2008; -- YEAR OBTIENE EL AÑO DE UN DATO DATE.
 
 select * from pedido where month(fecha_entrega) = 01; -- MONTH OBTIENE EL MES DE UN DATE.
@@ -216,5 +220,7 @@ select * from pago where DATE_FORMAT(fecha_pago, "%Y") = 2008; -- -- DATE_FORMAT
 SELECT * FROM pago WHERE LEFT(fecha_pago, 4) = 2008; -- LEFT(fecha_pago, 4) OBTIENE EL AÑO DE UN DATO DATE. .
 
 SELECT * FROM pedido WHERE adddate(fecha_entrega, interval 2 day) <= fecha_esperada; -- ADDDATE(fecha_entrega, interval 2 day) AGREGA TIEMPO A UN DATO DATE. (FUNCIONA CON DÍAS, MESES, AÑOS...)
+
+SELECT DATE_sub(fecha_pago, INTERVAL 7 DAY) AS fecha_nueva FROM pago; -- DATE_sub() QUITA TIEMPO A UNA FECHA.
 
 SELECT * FROM pedido WHERE datediff(fecha_entrega, fecha_esperada) >= 2; -- datediff(fecha_entrega, fecha_esperada) RETORNA LA DIFERENCIA ENTRE 2 FECHAS. (SÓLO FUNCIONA CON DÍAS)
