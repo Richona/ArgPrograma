@@ -117,6 +117,7 @@ METODOS DATE:
 Date() //Retorna la fecha actual.
 
 Date(int dia, int mes, int año) //Retorna la fecha ingresada sumando 1900 al año.
+new Date(leer.nextInt()- 1900, leer.nextInt()+1, leer.nextInt());
 
 after(Date fecha2) //Retorna true si la fecha esta despues de la fecha del parametro.
 

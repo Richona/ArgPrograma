@@ -1,0 +1,225 @@
+***********
+*** JPA ***
+***********
+- Java persistence API.
+- Interactua con DB mediante objetos.
+- Convierve objetos en instrucciones al DBMS.
+- Simplifica el modelo de programacion de persistencia.
+- Utiliza anotacioness o XML para correlacionar objetos a la DB.
+- Proporcina el lenguaje JPQL.
+- No necesita programar codigo JDBC ni consultas SQL.
+
+*** COMPONENTES ***
+- Entity: 
+Clase simple que representa una tabla, pueden er concretas o abstractas.
+- Persistence: 
+Clase com metodos estaticos que permite obtener instancias de EntityManagerFactory.
+- EntityManagerFactory: 
+Factoria de EntityManager encargada de crear y gestionar multiples instancias de EntityManager.
+- EntityManager:
+Interfaz que gestiona operaciones de persistencia de entidades (CRUD). Tambien trabaja como factoria de Querys.
+- Querys: 
+Interfaz para obtener la relacion de objetos que cumplen un criterio.
+- EntityTransaction: Agrupa operaciones realizadas sobre un EntityManager en una unica transaccion de DB.
+
+
+*****************************
+*** MAPEO CON ANOTACIONES ***
+*****************************
+- ORM (Object Relational Mapping).
+- Correlacion entre java y DB.
+- JPA permite realizarlo mediante anotaciones.
+- Comienzan con "@" seguido de un identificador.
+- Se utilizan antes de la declaracion de clase, propiedad o metodo.
+
+@Entity
+public class Empleado {}
+Declara clase como Entidad.
+
+@Id 
+private Long id;
+Declara atributo como clave primaria de tabla.
+
+@Id 
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
+Declara como la clave primaria sera inicializada (manual, auto, o secuencia) mediante una estrategia, IDENTITY incrementa de 1 en 1.
+
+@Temporal
+Declara que se está tratando de un atributo que va a trabajar con fechas, entre paréntesis, debemos especificarle que estilo de fecha va a manejar en la base de datos:
+@Temporal(TemporalType.DATE) //fecha sin hora.
+@Temportal(TemporalType.TIME) //hora sin fecha.
+@Temporal(TemporalType.TIMESTAMP) //fecha y hora.
+EJ:
+@Temporal(TemporalType.DATE)
+private Date fechaNacimiento;
+
+@Enumerated
+Declara que un atributo es de algun valor definido en un Enumerado(Constantes).
+
+@Table 
+Declara nombre de tabla con la que se mapea la Entidad.
+
+@Column
+Declara que un atributo se mapea con una columna de la tabla.
+
+
+******************
+*** RELACIONES ***
+******************
+- JPA da 4 anotaciones para relacionar.
+- Permite aclararle a la DB como se relacionan.
+
+@OneToOne
+uno a uno
+EJ:
+@Entity
+public class Curso{
+	@Id
+	private Long id;
+	private Integer precio;
+	private String nombreCurso;
+	@OneToOne
+	private Profesor profesor;
+}
+
+@OneToMany
+uno a muchos
+
+@ManyToOne
+muchos a uno
+
+@ManyToMany
+muchos a muchos
+
+- En las ultimas 3 anotaciones se generara una tabla intermedia.
+- Tener en cuenta que en Java no se pueden representar todas las relaciones que tiene MySQL, por lo tanto, a la hora de utilizar las anotaciones pensemos en las tablas, no en las clases.
+
+
+*********************************************
+*** PERSISTENCIA EN JPA CON ENTITYMANAGER ***
+*********************************************
+- EntityManager como interface medular, controla ciclo de vida de entidades.
+- Posibilita el poder crear, borrar, actualizar y consultar.
+- Instancia de la interfaz EntityManagerFactory. Ej:
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+- A partir de ciertos metodos puede funcionar.
+
+*** Persist() ***
+- Persiste (conserva permanente) una entidad en la DB.
+- No es considera una transaccion como crear, editar, o eliminar.
+- EJ: 
+// Creamos un EntityManager
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+//Creamos un objeto Alumno y le asignamos un nombre
+Alumno alumno = new Alumno();
+a1.setNombre("Nahuel");
+
+//Iniciamos una transacción con el método getTransaction().begin();
+em.getTransaction().begin();
+
+//Persistimos el objeto
+em.persist(alumno);
+
+//Terminamos la transacción con el método commit. 
+em.getTransaction().commit();
+
+*** Find() ***
+- Busca y devuelve una entidad en la DB, a traves del id y tipo de entidad.
+- EJ:
+// Creamos un EntityManager
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+// Usamos el método find para buscar una persona con id 123 en la DB
+Persona persona = em.find(Persona.class, 123);
+
+*** Merge() ***
+- Funciona igual que persist pero actualiza una entidad.
+- EJ:
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+//Usamos el método find para buscar el alumno a editar
+Alumno alumno = em.find(Alumno.class,1234);
+
+//Le asignamos un nuevo nombre
+alumno.setNombre("Francisco");
+em.getTransaction().begin();
+
+//Actualizamos el alumno
+em.merge(alumno);
+em.getTransaction().commit();
+
+*** Remove() ***
+- Elimina una entidad de la DB.
+- EJ: 
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+//Usamos el método find para buscar el alumno a borrar
+Alumno alumno = em.find(Alumno.class,1234);
+em.getTransaction().begin();
+
+//Borramos el alumno
+em.remove(alumno);
+em.getTransaction().commit();
+
+
+**********************************************
+*** JAVA PERSISTENCE QUERY LANGUAGE (JPQL) ***
+**********************************************
+- Lenguaje de consulta orientado a objetos.
+- Semejante a SQL.
+
+*** Clausulas SELECT - FROM ***
+- FROM define de que entidades se seleccionan datos.
+- A partir de nombre entiendades y atributos se selecciona, ya no tabla y columna.
+- EJ:
+SELECT a.nombre, a.apellido FROM Autor a;
+
+*** Clausulas WHERE ***
+- Similar a SQL, pero solo admite algunos operadores.
+• Igual: author.id = 10
+• Distinto: author.id <> 10
+• Mayor que: author.id > 10
+• Mayor o Igual que: author.id => 10
+• Menor que: author.id < 10
+• Menor o igual que: author.id <= 10
+• Between: author.id BETWEEN 5 and 10
+• Like: author.firstName LIKE :‘%and%’
+• Is null: author.firstName IS NULL
+Se lo puede negar con el operador NOT, para traer todos los que no son nulos
+• In: author.firstName IN (‘John’,‘Jane’)
+Va a traer todos los autores con el nombre John o Jane.
+
+*** Unir entidades ***
+- Se une en el FROM. EJ:
+SELECT a FROM Libro a JOIN a.autor b;
+- No es necesario la declaracion del ON.
+- Tambien se puede usar ".", sin necesidad de usar JOIN. EJ:
+SELECT a FROM Libro a WHERE a.autor.nombre LIKE : "Homero";
+
+
+**************************************************
+*** CREAR CONSULTAS / QUERYS CON ENTITYMANAGER ***
+**************************************************
+- Se logra mediante createQuery(querySQL), enviando a la DB y recibiendo data.
+- Se recibe mediante getResultList() o getSingleResult(), el primero es el recomendado.
+- EJ:
+// Para esto vamos a tener que crear un EntityManager
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+// Usamos el metodo createQuery y le ponemos la query de JPQL
+List<Autor> autores = em.createQuery("SELECT a FROM Autor a")
+.getResultList();
+
+// Ponemos una lista del tipo de dato que vamos a traer en la query y usamos el getResultList() para atrapar todos los resultados de la query.
+
+*** AGREGAR PARÁMETROS QUERY ***
+- Mediante setParameter() podemos lograrlo. EJ:
+EntityManager em = Persistence.createEntityManagerFactory("nombreUnidadDePersistencia").createEntityManager();
+
+public List listarPorEdad(int age){
+	List<Persona> personas = em.createQuery("SELECT p FROM 	Persona p WHERE p.edad LIKE :edad").setParameter("edad", age).getResultList();
+}
+
+- La query utiliza parámetro llamado edad, y el setParameter(), le decimos parámetro “edad” va a ser igual al valor que está en la variable age.
