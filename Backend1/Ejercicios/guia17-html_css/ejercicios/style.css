@@ -1,0 +1,157 @@
+/* GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    background-color: gray;
+}
+
+.tituloGeneral, .footer {
+    padding: 20px 0;
+
+    text-align: center;
+    text-decoration: underline;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    background: rgb(0, 14, 255);
+    background: linear-gradient(77deg, rgba(0, 14, 255, 1) 0%, rgba(255, 233, 0, 1) 100%);
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.main {
+    padding: 0 20px 20px;
+}
+
+/* CONSIGNAS */
+.section {
+    margin: 20px 0;
+    padding: 20px;
+
+    background-color: rgb(108, 106, 106);
+
+    border: 2px blue solid;
+    border-radius: 6px;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.section .consigna{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+    border-bottom: 2px yellow solid;
+}
+
+h1{
+    font-size: 2em;
+}
+
+img{
+    width: 100%;
+}
+
+/* EJERCICIO 1 */
+.section1 .resolucion .negrita{
+    font-weight: bold;
+}
+.section1 .resolucion .italica{
+    font-style: italic;
+}
+
+/* EJERCICIO 7 */
+.section7 .resolucion h1, .section7 .resolucion h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+.section7 .resolucion p{
+    color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* EJERCICIO 8 */
+.section8 .resolucion a:link{
+    color: #CC0000;
+}
+.section8 .resolucion a:hover{
+    background-color: #CC0000;
+    color: #FFF;
+}
+.section8 .resolucion a:visited{
+    color: #CCC;
+}
+
+/* EJERCICIO 9 */
+.section9 .resolucion #titulo{
+    color: cornflowerblue;
+
+    padding-bottom: 10px;
+}
+.section9 .resolucion p strong{
+    color: red;
+}
+.section9 .resolucion p .destacado{
+    color: yellow;
+}
+.section9 .resolucion #subtitulo{
+    color: blue;
+    padding: 10px 0;
+}
+
+.section9 .resolucion .warning{
+    color: red;
+}
+
+.section9 .resolucion .warning em{
+    color: blue;
+}
+
+.section9 .resolucion .especial{
+    color: purple;
+}
+
+.section9 .resolucion .tabla{
+    margin: 10px 0;
+}
+.section9 .resolucion .tabla .especial{
+    color: yellow;
+}
+.section9 .resolucion .tabla .especialRed{
+    color: red;
+}
+
+.section9 .resolucion .tabla td{
+    color: green;
+}
+.section9 .resolucion .tabla td strong{
+    color: yellow;
+}
+.section9 .resolucion .tabla tfoot th{
+    color: red;
+}
+
+.section9 .resolucion #adicional{
+    color: greenyellow;
+}
+
+.section9 .resolucion #adicional #especial{
+    color: pink;
+}
+.section9 .resolucion #adicional a{
+    color: green;
+}
+
+@media (min-width: 768px) {
+    img{
+        width: 500px;
+    }
+
+    .tituloGeneral {
+        font-size: 40px;
+    }
+
+}

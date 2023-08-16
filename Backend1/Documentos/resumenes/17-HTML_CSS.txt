@@ -1,0 +1,285 @@
+****************
+*** COMANDOS ***
+****************
+ALT + MAYUS + A -> comentar.
+
+
+************
+*** HTML ***
+************
+- Lenguaje de marcado de hipertexto.
+- Define estructura.
+- A traves de etiquetas funciona.
+- Se pueden anidar etiquetas.
+- Una etiqueta de abertura y cierre, mas su contenido, conforma un elemento.
+- Elementos de linea y elementos de bloque.
+- Cada etiqueta puede tener atributos.
+- 4 tipos de atributos: basicos, internacionalizacion, eventos y foco.
+- Mayus y minus indeferentes.
+
+*** ETIQUETAS DE HTML ***
+
+- <!DOCTYPE html> : con esto funciona todo.
+
+- <html></html>: etiqueta raiz.
+
+- <head></head>: dentro va todo lo que el usuario no debe ver.
+
+- <meta charset=”utf-8”>: establece los caracteres a utilizar.
+
+- <title></title>: titulo de la pagina.
+
+- <body></body>: dentro va todo lo que usuario debe ver.
+
+- <br>: salto de linea.
+
+- <p></p>: parrafo.
+
+- <strong></strong>: negrita.
+
+- <i></i>: italica.
+
+- <u></u>: subrayado.
+
+- <h1></h1> al <h6></h6>: encabezados de mayor a menor.
+
+- <ul></ul>: lista desordenada.
+
+- <ol></ol>: lista ordenada.
+* las listas se pueden anidar.
+- <li></li>: item de lista.
+
+- <a href="destino"></a>: enlace.
+* target="_blank" para abrir otra pestaña.
+
+- <img src="rutaAlArchivo" alt"textoPorError">: imagen.
+
+* Tablas *
+- <table></table>: definir table.
+
+- <th></th>: titulo columna de tabla.
+
+- <tr></tr>: fila de la tabla.
+
+- <td></td>: celda de tabla.
+
+* Formularios *
+- <form action="rutaAlMetodoEncargado" method="" enctype="multipart/form-data"></form> : definimos formulario.
+* method = POST o GET.
+
+- <input type="" name="" value="" maxlength="" placeholder="">: cajas para colocar info.
+* type= password, email, text, date, numbe, radio o checkbox.
+* name sirve para identificar la caja.
+* value sirve para dar un valor por defecto.
+* maxlength para poner max de longitud.
+* placeholder para hacer marca de agua.
+
+- <textarea name="" rows="" cols=""></textarea>: input grande.
+* rows define numero de lineas.
+* cols define numero de columnas.
+
+- <label for=""></label>: acompaña como titulo a un input.
+* for permite relacionar un label con un input que tendra un id con el mismo contenido que for.
+
+- <select name="" multiple>
+	<option selected>Primavera</option>
+	<option>Verano</option>
+	<option>Otoño</option>
+	<option>Invierno</option>
+</select> : lista de opciones.
+* multiple permite que el usuario seleccione mas de uno.
+* selected permite marcar una opcion por defecto.
+
+- <button type=""></button>: realiza una accion.
+* type= submit, reset o button.
+
+* Secciones *
+- <header></header> : encabezado de la pagina.
+
+- <nav></nav> : parte de navegacion.
+
+- <main></main> : cuerpo de la pagina.
+
+- <hgroup></hgroup>: encabezado de una seccion.
+
+- <section></section>: párte general.
+
+- <article></article> : componente.
+
+- <aside></aside>: contenido independiente.
+
+- <footer></footer>: pie de pagina.
+
+* Etiquetas extras *
+- <div></div>: permite agrupar cierto contenido de bloque a nuestro beneficio.
+
+- <span></span>: permite agrupar cierto contenido de linea a nuestro beneficio.
+
+
+***********
+*** CSS ***
+***********
+- Cascading Style Sheets.
+- Permite dar estilos a la estructura.
+- Estilos de forma general, en bloque, en porcion o etiqueta en concreto.
+- Sensible a mayus y minus.
+- Se enlaza un archivo css al head del html para vincular.
+- Se trabaja mediante selectores.
+- A cada selector se puede añadir estilos con propiedades y valores.
+- Cada estilo tiene herencia.
+- Todo estilo nuevo sobreescribe al anterior.
+- Da prioridad al selector mas especifico.
+- El contenido esta rodeado por padding, border y margin.
+
+*** TIPOS DE SELECTORES ***
+- Universal:
+* { margin: 0; padding: 0; }
+
+- Etiqueta:
+p { text-aling: justify; font-family: Verdana; }
+
+- Descendente:
+p span{ color: red; }
+
+- Clase:
+~ html
+<p class="destacado"> Párrafo 1</p>
+~ css
+.destacado{ font-size: 15px }
+
+- Id:
+~ html
+<div id="identificador"> ¡Este div tiene ID especial! </div>
+~ css
+#identificador { background-color: blue };
+
+
+*** PSEUDO-CLASES ***
+- a:link //estilo a enlaces no visitados.
+
+- a:visited //estilo a enlaces visitados.
+
+- a:hover //estilo a enlaces donde el usuario posiciona el puntero del raton.
+
+- a:active //estilo a enlaces clickeados.
+
+*** BOOTSTRAP ***
+- Combinacion de css y js para dar estilos.
+- Otorga plantillas de diseño.
+- Bootstrap.css se vincula mediante un link en el head de html.
+- Bootstrap.js se vincula mediante etiquetas scripts antes de cierre de la etiqueta body.
+
+
+*** UNIDADES DE MEDIDA ***
+- Absolutas: medidas fijas.
+. pt (puntos): 1/72 pulgadas.
+. in (pulgadas).
+. cm (centimetros).
+- mm (milimetros).
+- px (pixeles): unidad minima de resolucion de pantalla.
+
+- Relativas: se ajustan, mas recomendables.
+. em : referencia a la fuente establecida, por default es 16px.
+. porcentaje % : siempre hace referencia en base a otro elemento.
+
+
+*** COLORES ***
+- background-color: #ff8800 //notacion heaxagecimal.
+- color: red; //definir color por su nombre en ingles.
+- border-color: lime;
+- color: rgb(33%, 0%, 0%) // notacioin de color con porcentajes de RGB.
+- color: rgb(200,255,0) // notacion por valores decimales por RGB. de 0 a 255.
+- background-color: transparent //transparente.
+
+
+*** DIMENSIONES ***
+- width //ancho
+- height //alto.
+- margin //margen.
+- padding //relleno.
+*margin y padding tienen 4 propiedades: top, right, bottom, left.
+
+
+*** BORDES ***
+- border-top||right||bottom||left-widht //anchura del borde.
+- border-top||right||bottom||left-color //color a cada borde.
+- border-top||right||bottom||left-style //estilos a cada borde. Valores:
+.none: sin borde.
+.hidden: oculto.
+.dotted: puntuado.
+.dashed: discontinuo.
+.solid: solido.
+.double: doble.
+.groove: en relieve.
+.ridge: en relieve inverso.
+.inset: hundido.
+.outset: sobresaliente.
+- border: medidaBorde, colorBorde, estiloBorde; //forma resumida.
+
+
+*** FONDO ***
+- background-color  //color.
+- background-image //imagen de fondo.
+- background-repeat //repeticion de imagen de fondo. Valores:
+.repeat.
+.repeat-x.
+.repeat-y.
+.no-repeat.
+.inherit.
+- background-position //posicion de la imagen de fondo.
+- background-attachment //controlar la visualizacion de la imagen. Valores:
+.scroll.
+.fixed.
+.inherid.
+- background: color, image, repeat, attachment, position //forma resumida.
+
+
+*** TIPOGRAFIA ***
+- color //define color de la letra.
+- font-family //tipo de letra.
+- font-size //tamaño de la letra.
+- font-weight //grosor de la letra. Valores: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit.
+- font-style //estilo de la letra. Valores: normal | italic | oblique | inherit.
+
+
+*** FORMATEO DE TEXTO ***
+- text-aling //alineacion del texto. Valores: left | right | center | justify | inherit.
+- line-height //interlineado, espacio que ocupa cada renglon.
+- text-decoration //decoracion del texto. Valores: none | underline | overline | line-through | blink | inherit.
+- text-transform // transformacion del texto. Valores: capitalize | uppercase | lowercase | none | inherit.
+
+
+*** IMAGENES ***
+- con wigth y heigth se da ancho y alto. 
+- con border:none se saca el borde.
+
+
+*** LISTAS ***
+- list-style-type //viñetas personalidadas. Valores: disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit.
+- list-style-position //controla colocacion de viñetas. Valores: inside | outside | inherit.
+- list-style-image //ingresar una imagen como viñeta. Valores: url|none|inherit.
+
+
+*** TABLAS ***
+- cellspacing: es el espacio entre celdas de la tabla.
+- cellpadding: es el espacio entre el borde de la celda y su contenido.
+- border: es el número de píxeles que tendrá el borde de la tabla.
+- bordercolor: es el rbg que le vas a asignar al borde de la tabla.
+- align: Justifica el texto de la celda del mismo modo que si fuese el de un párrafo.
+- valign: Podemos elegir si queremos que el texto aparezca arriba (top), en el centro
+(middle) o abajo (bottom) de la celda.
+- bgcolor: Da color a la celda o línea elegida.
+- bordercolor: Define el color del borde.
+- background: Nos permite colocar un fondo para la celda a partir de un enlace o una
+imagen.
+- height: Define la altura de la celda en pixeles o porcentaje.
+- width: Define la anchura de la celda en pixeles o porcentaje.
+- colspan: Expande una celda horizontalmente.
+- rowspan: Expande una celda verticalmente.
+- border-collapse //selecciona modelo de bordes. Valores: collapse | separate | inherit.
+- border-spacing //controla separacion entre border de cada celda.
+
+
+
+
+

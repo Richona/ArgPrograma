@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios del 1 al 13</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body class="body">
+    <header class="tituloGeneral">
+        <h1>Ejercicios del 1 al 13</h1>
+    </header>
+    <main class="main">
+        <!-- EJERCICIO 1 -->
+        <section class="section section1">
+            <article class="consigna">
+                <h2>Ejercicio N° 1:</h2>
+                <p>Crear un archivo HTML, que contenga un encabezado "h1" seguido de un párrafo y un
+                    encabezado "h2" seguido de otro párrafo. Después, hacer que un párrafo se muestre en
+                    negrita y el otro en itálica. Utilizar saltos de línea si los consideran necesarios.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1>Encabezado h1</h1>
+                <p class="negrita">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tenetur officia,
+                    nostrum molestias
+                    suscipit mollitia aliquam delectus, esse natus sed nihil iure in? Dolores iusto quaerat unde
+                    adipisci excepturi aut.
+                </p>
+                <br>
+                <h2>Encabezado h2</h2>
+                <p class="italica">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, unde voluptas
+                    necessitatibus cum
+                    possimus ducimus temporibus dicta culpa sed id eaque consequatur consectetur cupiditate distinctio
+                    dolorem quisquam aperiam perspiciatis voluptatum!
+                </p>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 2 -->
+        <section class="section section2">
+            <article class="consigna">
+                <h2>Ejercicio N° 2:</h2>
+                <p>
+                    Ahora vamos a tener que centrar nuestros encabezados y nuestros párrafos alinearlos a la
+                    izquierda. A continuación, después del último párrafo vamos a tener que crear una lista
+                    ordenada de lo que queramos. Tendremos que mostrar la lista donde la enumeración sean
+                    letras del alfabeto. Sin usar CSS
+                </p>
+            </article>
+
+            <div>
+                <h1 align="center">Encabezado h1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tenetur officia,
+                    nostrum molestias
+                    suscipit mollitia aliquam delectus, esse natus sed nihil iure in? Dolores iusto quaerat unde
+                    adipisci excepturi aut.
+                </p>
+                <br>
+                <h2 align="center">Encabezado h2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, unde voluptas
+                    necessitatibus cum
+                    possimus ducimus temporibus dicta culpa sed id eaque consequatur consectetur cupiditate distinctio
+                    dolorem quisquam aperiam perspiciatis voluptatum!
+                </p>
+                <ol type="a" style="padding-left: 18px;">
+                    <li>Manzana</li>
+                    <li>Naranja</li>
+                    <li>Banana</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 3 -->
+        <section class="section section3">
+            <article class="consigna">
+                <h2>Ejercicio N° 3:</h2>
+                <p>
+                    Ahora crearemos otro archivo HTML en que crearemos una lista anidada de enlaces,
+                    deberá verse así:
+                    a. Cada buscador y red social que sale en la lista deben ser links a las respectivas
+                    páginas.
+                    b. Recordemos que no debemos utilizar CSS para lograr ninguna de estas tareas, la idea
+                    es practicar HTML por su cuenta y después sumaremos CSS.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <ul style="padding-left: 18px;">
+                    <li>Buscadores</li>
+                    <ul style="padding-left: 36px;">
+                        <li><a href="https://www.google.com.ar/webhp" target="_blank">Google</a></li>
+                        <li><a href="https://www.bing.com/?toWww=1&redig=CCCBDFB4238340F79A7E1F9B17619607"
+                                target="_blank">Bing</a></li>
+                    </ul>
+                    <li>Redes sociales</li>
+                    <ul style="padding-left: 36px;">
+                        <li><a href="https://www.instagram.com/?hl=es" target="_blank">Instagram</a></li>
+                        <li><a href="https://twitter.com/" target="_blank">Twitter (X)</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 4 -->
+        <section class="section section4">
+            <article class="consigna">
+                <h2>Ejercicio N° 4:</h2>
+                <p>
+                    Crear un nuevo archivo HTML en el que explicaremos la receta para hacer papas fritas. La
+                    página debería verse así:
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1>Papas fritas</h1>
+                <br>
+                <p>Receta de papas fritas caseras</p>
+                <br>
+                <img src="img/papasFritas.PNG" alt="papas fritas">
+                <br>
+                <h2>Ingredientes</h2>
+                <ul style="padding-left: 36px;">
+                    <li>3 o 4 papas (300gr)</li>
+                    <li>Aceite</li>
+                    <li>Sal</li>
+                </ul>
+                <br>
+                <h2>Elaboracion (pasos)</h2>
+                <ul style="padding-left: 36px;">
+                    <li>Pelar las papas</li>
+                    <li>Cortarlas en baston</li>
+                    <li>Calentar aceite en una sarten</li>
+                    <li>Cocinar hasta que esten doradas</li>
+                    <li>Removerlas del aceite y salar a gusto</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 5 -->
+        <section class="section section5">
+            <article class="consigna">
+                <h2>Ejercicio N° 5:</h2>
+                <p>
+                    Ahora vamos a crear una página web de nuestra banda favorita, vamos a mostrar un
+                    ejemplo con los Beatles:
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1>Los Beatles</h1>
+                <br>
+                <p>Es una banda de rock formada en el año 1960 en Liverpool</p>
+                <br>
+                <img src="img/beattles.PNG" alt="THE BEATLES">
+                <br>
+                <h2>Integrantes</h2>
+                <ul style="padding-left: 36px;">
+                    <li>Paul</li>
+                    <li>John</li>
+                    <li>Ringo</li>
+                    <li>George</li>
+                </ul>
+                <br>
+                <table border="separate">
+                    <tr>
+                        <th>Año</th>
+                        <th>Disco</th>
+                    </tr>
+                    <tr>
+                        <td>1965</td>
+                        <td>Help!</td>
+                    </tr>
+                    <tr>
+                        <td>1968</td>
+                        <td>The Beatles</td>
+                    </tr>
+                    <tr>
+                        <td>1969</td>
+                        <td>Abbey Road</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">"Abbey Road fue su ultimo disco"</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 6 -->
+        <section class="section section6">
+            <article class="consigna">
+                <h2>Ejercicio N° 6:</h2>
+                <p>
+                    Por último, vamos a crear un formulario para registrar un usuario que se vea de la
+                    siguiente manera:
+                    Es importante que en las casillas de sexo del usuario se puede clickear la/s palabra/s
+                    hombre, mujer o prefiero no decir para seleccionar la opción. Recordemos que eso lo
+                    podemos hacer con la etiqueta label.
+                </p>
+            </article>
+
+            <article class="resolucion">
+                <h1>Registrar un usuario</h1>
+                <br>
+                <div>
+                    <label for="nombre">Nombre del usuario</label>
+                    <br>
+                    <input name="nombre" id="nombre" type="text">
+                </div>
+                <div>
+                    <label for="contra">Contraseña del usuario</label>
+                    <br>
+                    <input name="contra" id="contra" type="password">
+                </div>
+                <div>
+                    <label for="edad">Edad del usuario</label>
+                    <br>
+                    <input name="edad" id="edad" type="number">
+                </div>
+                <div>
+                    <label for="nacimiento">Fecha de nacimiento del usuario</label>
+                    <br>
+                    <input name="nacimiento" id="nacimiento" type="date">
+                </div>
+                <div>
+                    <label>Sexo del usuario</label>
+                    <br>
+                    <input name="sexo" id="hombre" type="radio" value="h">
+                    <label for="hombre">Hombre</label>
+                    <br>
+                    <input name="sexo" id="mujer" type="radio" value="m">
+                    <label for="mujer">Mujer</label>
+                    <br>
+                    <input name="sexo" id="otro" type="radio" value="o">
+                    <label for="otro">Otro</label>
+                </div>
+                <div>
+                    <label for="pais">Pais nacimiento del usuario</label>
+                    <br>
+                    <select name="pais" id="pais">
+                        <option value="Argentina" selected>Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Brasil">Brasil</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- EJERCICIO 7 -->
+        <section class="section section7">
+            <article class="consigna">
+                <h2>Ejercicio N° 7:</h2>
+                <p>
+                    Crear un archivo HTML y un archivo CSS, vamos a linkear el archivo CSS al archivo HTML y
+                    vamos a hacer lo mismo que el primer ejercicio, pero ahora la página va a tener un color
+                    de fondo a elección, el encabezado H1 tiene que tener una fuente a elección y estar
+                    centrado, lo mismo para el encabezado H2, y por ultimo los párrafos deben tener una
+                    fuente a elección, deben tener un color a elección y deben estar centrados a la izquierda.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1>Encabezado h1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tenetur officia,
+                    nostrum molestias
+                    suscipit mollitia aliquam delectus, esse natus sed nihil iure in? Dolores iusto quaerat unde
+                    adipisci excepturi aut.
+                </p>
+                <br>
+                <h2>Encabezado h2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, unde voluptas
+                    necessitatibus cum
+                    possimus ducimus temporibus dicta culpa sed id eaque consequatur consectetur cupiditate distinctio
+                    dolorem quisquam aperiam perspiciatis voluptatum!
+                </p>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 8 -->
+        <section class="section section8">
+            <article class="consigna">
+                <h2>Ejercicio N° 8:</h2>
+                <p>
+                    Definir las reglas CSS que permiten mostrar los enlaces con los siguientes estilos:
+                    • En su estado normal, los enlaces se muestran de color rojo #CC0000.
+                    • Cuando el usuario pasa su ratón sobre el enlace, se muestra con un color de fondo
+                    rojo #CC0000 y la letra de color blanco #FFF.
+                    • Los enlaces visitados se muestran en color gris claro #CCC.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <a href="">Enlace 1</a>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 9 -->
+        <section class="section section9">
+            <article class="consigna">
+                <h2>Ejercicio N° 9:</h2>
+                <p>
+                    A partir del siguiente código HTML proporcionado, añadir las reglas CSS necesarias para
+                    que la página resultante tenga el mismo aspecto que el de la siguiente imagen:
+
+                    Nota: el código para este ejercicio se encuentra en GitHub o Moodle.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1 id="titulo">Lorem ipsum dolor sit amet</h1>
+
+                <p>
+                    Nulla pretium. Sed tempus nunc vitae neque.
+                    <strong>Suspendisse gravida</strong>, metus a scelerisque sollicitudin,
+                    lacus velit ultricies nisl, nonummy tempus neque diam quis felis.
+                    <span class="destacado">Etiam sagittis tortor</span> sed arcu sagittis
+                    tristique.
+                </p>
+
+                <h2 id="subtitulo">Aliquam tincidunt, sem eget volutpat porta</h2>
+
+                <p>
+                    Vivamus velit dui, placerat vel, feugiat in, ornare et, urna.
+                    <a href="#" class="warning">Aenean turpis metus, <em>aliquam non</em>, tristique in</a>,
+                    pretium varius, sapien. Proin vitae nisi. Suspendisse
+                    <span class="especial">porttitor purus ac elit</span>. Suspendisse
+                    eleifend odio at dui. In in elit sed metus pretium elementum.
+                </p>
+
+                <table summary="Descripción de la tabla y su contenido" class="tabla" border="collapse">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" class="especial">Título columna 1</th>
+                            <th scope="col" class="especial">Título columna 2</th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Título columna 1</th>
+                            <th scope="col">Título columna 2</th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="especial">Título fila 1</th>
+                            <td>Donec purus ipsum</td>
+                            <td>Curabitur <em>blandit</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="especialRed">Título fila 2</th>
+                            <td>Donec <strong>purus ipsum</strong></td>
+                            <td>Curabitur blandit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="adicional">
+                    <p>
+                        Donec purus ipsum, posuere id, venenatis at,
+                        <span>placerat ac, lorem</span>. Curabitur blandit, eros sed gravida
+                        aliquet, risus justo porta lorem, ut mollis lectus tortor in orci.
+                        Pellentesque nec augue.
+                    </p>
+
+                    <p>
+                        Fusce nec felis eu diam pretium adipiscing.
+                        <span id="especial">Nunc elit elit, vehicula vulputate</span>, venenatis
+                        in, posuere id, lorem. Etiam sagittis, tellus in ultrices accumsan, diam
+                        nisi feugiat ante, eu congue magna mi non nisl.
+                    </p>
+
+                    <p>
+                        Vivamus ultrices aliquet augue.
+                        <a href="#">Donec arcu pede, pretium vitae</a>, rutrum aliquet,
+                        tincidunt blandit, pede. Aliquam in nisi. Suspendisse volutpat. Nulla
+                        facilisi. Ut ullamcorper nisi quis mi.
+                    </p>
+                </div>
+        </section>
+
+        <!-- EJERCICIO 10 -->
+        <section class="section section10">
+            <article class="consigna">
+                <h2>Ejercicio N° 10:</h2>
+                <p>
+                    Ahora vamos a utilizar Bootstrap. Deberemos crear una página que tenga un encabezado
+                    H1 con un párrafo y un encabezado H2 con un párrafo. Tenemos que lograr que se vean
+                    con los estilos de Bootstrap.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h1 class="p-3 bg-primary text-center border border-primary-subtle rounded-3">Encabezado h1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tenetur officia,
+                    nostrum molestias
+                    suscipit mollitia aliquam delectus, esse natus sed nihil iure in? Dolores iusto quaerat unde
+                    adipisci excepturi aut.
+                </p>
+                <br>
+                <h2 class="p-1 bg-dark text-center border border-primary-subtle rounded-3">Encabezado h2</h2>
+                <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, unde voluptas
+                    necessitatibus cum
+                    possimus ducimus temporibus dicta culpa sed id eaque consequatur consectetur cupiditate distinctio
+                    dolorem quisquam aperiam perspiciatis voluptatum!
+                </p>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 11 -->
+        <section class="section section11">
+            <article class="consigna">
+                <h2>Ejercicio N° 11:</h2>
+                <p>
+                    Usar Bootstrap para mostrar una tabla de productos así:
+                </p>
+            </article>
+
+            <div class="resolucion pt-4">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Producto1</th>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Producto2</th>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Producto3</th>
+                            <td>10000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 12 -->
+        <section class="section section12">
+            <article class="consigna">
+                <h2>Ejercicio N° 12:</h2>
+                <p>
+                    Una vez que tenemos esa tabla vamos a sumarle una columna más que se vea así:
+
+                    Para esto investigar la clase button de Bootsrap para las etiquetas <a> e investigar los
+                        colores de Bootstrap y como sumarlos.
+                </p>
+            </article>
+
+            <div class="resolucion pt-4">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Producto1</th>
+                            <td>10000</td>
+                            <td><button type="button" class="btn btn-primary">Ver producto</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Producto2</th>
+                            <td>10000</td>
+                            <td><button type="button" class="btn btn-primary">Ver producto</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Producto3</th>
+                            <td>10000</td>
+                            <td><button type="button" class="btn btn-primary">Ver producto</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 13 -->
+        <section class="section section13">
+            <article class="consigna">
+                <h2>Ejercicio N° 13:</h2>
+                <p>
+                    Un formulario para que el usuario se pueda registrar en nuestra página usando Bootstrap.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <h4>Formulario de registro</h4>
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </form>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <h4>Gracias por visitar! No olvide su follow.</h4>
+    </footer>
+</body>
+
+</html>
