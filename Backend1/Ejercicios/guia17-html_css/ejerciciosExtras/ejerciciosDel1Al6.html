@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios extras del 1 al 6</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <article class="botonFijo" onclick="scrollTop()">
+        <a href="#">
+            <div>
+                Up!
+            </div>
+        </a>
+    </article>
+    <header class="tituloGeneral">
+        <h1>Ejercicios extras del 1 al 6</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary small">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-flex justify-content-between w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#listas">Listas (EE1)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tabla">Tabla (EE2)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#navBar">NavBar (EE3)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#navBarImage">NavBarImage (EE4)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#detalle">Detalle (EE5)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalogo">Catalogo (EE6)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <!-- EJERCICIO 1 -->
+        <section class="section section1" id="listas">
+            <article class="consigna">
+                <h2>Ejercicio N° 1:</h2>
+                <p>
+                    Para este apartado vamos a crear 2 listas:
+                    a. Lista con viñetas con aspectos personalizados a elección.
+                    b. Lista vertical con links a paginas a elección.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <ul class="personalizada">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+
+                <ul class="personalizada">
+                    <li><a href="https://trello.com">Trello</a></li>
+                    <li><a href="https://calendar.google.com">Google Calendar</a></li>
+                    <li><a href="https://lxp.eggcooperation.com">Egg</a></li>
+                    <li><a href="https://drive.google.com">Google drive</a></li>
+                    <li><a href="https://github.com/Richona">Github</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 2 -->
+        <section class="section section2" id="tabla">
+            <article class="consigna">
+                <h2>Ejercicio N° 2:</h2>
+                <p>
+                    Determinar las reglas CSS necesarias para mostrar la siguiente tabla con el aspecto final
+                    mostrado en la imagen (modificar el código HTML que se considere necesario añadiendo
+                    los atributos class oportunos).
+                    Tabla original:
+
+                    Tabla final:
+
+                    Pasos a realizar:
+                    1. Alinear el texto de las celdas, cabeceras y título. Definir los bordes de la tabla, celdas y
+                    cabeceras (color gris oscuro #333).
+
+                    2. Formatear las cabeceras de fila y columna con la imagen de fondo correspondiente en
+                    cada caso (fondo_gris.gif, euro.png, dolar.png, yen.png, libra.png). Modificar el tipo de
+                    letra de la tabla y utilizar Arial. El color azul claro es #E6F3FF.
+
+                    3. Mostrar un color alterno en las filas de datos (color amarillo claro #FFFFCC).
+
+                    Nota: el código para este ejercicio se encuentra en GitHub o Moodle.
+                </p>
+            </article>
+
+            <div class="resolucion table-wrapper">
+                <table summary="Tipos de cambio">
+                    <tr class="cabecera">
+                        <th scope="col">Cambio</th>
+                        <th scope="col">Compra</th>
+                        <th scope="col">Venta</th>
+                        <th scope="col">M&aacute;ximo</th>
+                        <th scope="col">M&iacute;nimo</th>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="tipoMoneda"><img src="img/euro.png" alt="">Euro/Dolar</th>
+                        <td>1.2524</td>
+                        <td>1.2527</td>
+                        <td>1.2539</td>
+                        <td>1.2488</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="tipoMoneda"><img src="img/dolar.png" alt="">Dolar/Yen</th>
+                        <td>119.01</td>
+                        <td>119.05</td>
+                        <td>119.82</td>
+                        <td>119.82</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="tipoMoneda"><img src="img/libra.png" alt="">Libra/Dolar</th>
+                        <td>1.8606</td>
+                        <td>1.8611</td>
+                        <td>1.8651</td>
+                        <td>1.8522</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="tipoMoneda"><img src="img/yen.png" alt="">Yen/Euro</th>
+                        <td>149.09</td>
+                        <td>149.13</td>
+                        <td>149.79</td>
+                        <td>148.96</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 3 -->
+        <section class="section section3">
+            <article class="consigna">
+                <h2>Ejercicio N° 3:</h2>
+                <p>
+                    Siguiendo el ejercicio de Bootstrap, haremos una landing page que contenga un navbar.
+                    Investigar el navbar en Bootstrap, con botones a todas las páginas previamente
+                    mencionadas.
+
+                    Pueden también hacer que ese navbar salga en el resto de las páginas.
+                </p>
+            </article>
+
+            <div class="resolucion " id="navBar">
+                <nav class="navbar bg-white navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand bg-white p-2 rounded text-dark" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark active" aria-current="page"
+                                        href="#">Home (current)</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#tabla">Tabla</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#listas">Listas</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#navBar">navBar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 4 -->
+        <section class="section section4" id="navBarImage">
+            <article class="consigna">
+                <h2>Ejercicio N° 4:</h2>
+                <p>
+                    Además, le sumaremos una imagen a la landing page usando las clases para la etiqueta
+                    "img" que nos provee Bootstrap. Ejemplo:
+                </p>
+            </article>
+
+            <div class="resolucion bg-white">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand bg-white p-2 rounded text-dark" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark active" aria-current="page"
+                                        href="#">Home (current)</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#tabla">Tabla</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#listas">Listas</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link bg-white p-2 rounded text-dark" href="#navBar">navBar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container-fluid">
+                    <img src="img/fotoegg.png" class="img-fluid" alt="fotoegg">
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 5 -->
+        <section class="section section5" id="detalle">
+            <article class="consigna">
+                <h2>Ejercicio N° 5:</h2>
+                <p>
+                    Ahora deberemos hacer una página para el detalle del producto. Una página que muestre
+                    el nombre, el precio del producto y un botón para comprar y otro para agregar al carrito. A
+                    esta página se accederá con el botón en a la tabla de ver detalle.
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/producto.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">$9.95</h5>
+                                <p class="card-text">PRODUCTO DE MUESTRA</p>
+                                <p class="card-text"><small class="text-body-secondary">Lorem ipsum dolor sit amet elit.
+                                        Ratione nemo.</small></p>
+                                <button type="button" class="btn btn-warning">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 6 -->
+        <section class="section section6" id="catalogo">
+            <article class="consigna">
+                <h2>Ejercicio N° 6:</h2>
+                <p>
+                    Por último, sumarle a la landing cartas que muestren productos de esta manera:
+                </p>
+            </article>
+
+            <div class="resolucion">
+                <div class="d-flex flex-wrap justify-content-between gap-3">
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 col-12 col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejemplo producto</h5>
+                                <p class="card-text">Descripcion del producto</p>
+                                <button type="button" class="btn btn-primary">Ver producto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <h4>Gracias por visitar! No olvide su follow.</h4>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
