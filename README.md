@@ -5,8 +5,10 @@
 
 <p align="right">  Richona</p>
 
-###*** Guia 17 HTML + CSS ***
+###*** Guia 17 HTML + CSS *** 
+<br>
 <a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejercicios/ejerciciosDel1Al13">* Ejercicios obligatorios </a>
+<br>
 <a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejerciciosExtras/ejerciciosDel1Al6">* Ejercicios extras </a>
 
 
