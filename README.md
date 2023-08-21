@@ -6,8 +6,8 @@
 <p align="right">  Richona</p>
 
 ### *** Guia 17 HTML + CSS *** 
-<a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejercicios/ejerciciosDel1Al13">* Ejercicios obligatorios </a>
+<a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejercicios/ejerciciosDel1Al13" target="_blank">* Ejercicios obligatorios </a>
 <br>
-<a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejerciciosExtras/ejerciciosDel1Al6">* Ejercicios extras </a>
+<a href="https://richona.github.io/ArgPrograma/Backend1/Ejercicios/guia17-html_css/ejerciciosExtras/ejerciciosDel1Al6" target="_blank">* Ejercicios extras </a>
 
 
