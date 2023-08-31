@@ -1,0 +1,895 @@
+******************
+*** JAVASCRIPT ***
+******************
+- Lenguaje de programacion interpretado, dialecto ECMAScript.
+- Se define como orientado a objetos, basado en prototipos, imperativo, debilmente tipado y dinamico.
+- Del lado del cliente.
+- Mejoras en interfaz de usuario y paginas web dinamicas.
+
+
+*********************************
+*** SALIDA Y ENTRADA DE DATOS ***
+*********************************
+- Console proporciona acceso a la consola de depuracion del navegador.
+- Varios metodos de console:
+* console.log() //imprime la salida, soporta cualquir dato.
+* console.error() //msj de error.
+* console.warn() //msj de advertencia.
+* console.clear() //limpia consola.
+* console.time() Y timeEnd() //cantidad de tiempo empleado por un bloque.
+* console.table() //genera tabla en la consola, permitiendo matriz u objeto.
+* console.count() //cuenta numero de veces de una funcion.
+
+
+*********************
+*** OBJETO WINDOW ***
+*********************
+- Permite controlar la ventana del navegador.
+- Metodos:
+* Window.prompt() //dialogo con mensaje opcional para pedir un texto.
+* Window.alert() //dialogo de alerta con contenido opcional y boton OK.
+
+
+*****************
+*** VARIABLES ***
+*****************
+- No es obligatorio declararlas.
+- Siempre minuscula
+- Si son dos palabras en formato camelCase, tambien guion, sin usar ñ, ni tildes, ni ningun caracter especial.
+- Tipos:
+* VAR // global, accedida desde cualquier lado dentro del archivo.
+* LET // local, solo puede ser accedida desde el bloque donde se declaro.
+* CONST //local, su valor no puede cambiarse.
+
+
+************************
+*** TEMPLATE STRINGS ***
+************************
+- Cadenas de texto de plantilla.
+- Se usa como apertura y cierre el simbolo ``.
+- Facilitan la sintaxis.
+- Entre ${expresion} va el valor a mostrar.
+- EJEMPLO:
+var operando1 = 7;
+var operando2 = 98;
+var multiplicacion = `La multiplicación entre ${operando1} y ${operando2}
+equivale a ${operando1 * operando2}`;
+- Con hacer un enter ya se hace salto de linea, no hace falta \n.
+
+
+**********************
+*** TIPOS DE DATOS ***
+**********************
+*** Primitivos ***
+- Numerico //enteros o reales.
+- String //Cadenas de texto.
+- Boolean //True o false.
+- Null //dato inexistente.
+- Undefined //dato indefinido.
+
+*** Objetos ***
+- Predifinido por JS:
+* Date: fechas.
+* RegExp: expresiones regulares.
+* Error: datos de error.
+- Definidos por programador: funciones simples y clases.
+- Arrays: serie de elementos.
+
+
+******************
+*** OPERADORES ***
+******************
+*** Asignacion ***
+- = //asignacion simple.
+
+*** Aritmeticos ***
+- + //suma
+- - //resta.
+- * //multiplicacion.
+- ** //exponenciacion.
+- / //division.
+- % //modulo.
+
+*** Unarios ***
+- ++ //incremento.
+- -- //decremento.
+- += //sumar y asignar.
+- -= //restar y asignar.
+- *= //multiplicar y asignar.
+- /= //dividir y asignar.
+- %= //modulo y asignar.
+- **= //exponenciacion y asignar.
+
+*** Logicos y relacionales ***
+- == //igual.
+- === //igual estricto.
+- != //distinto.
+- !== //distinto estricto.
+- > //mayor.
+- >= //mayor o igual.
+- < //menor.
+- <= //menor o igual.
+
+*** Condicionales ***
+- && //and
+- || //or
+- ! //negacion.
+
+*** Comparacion de tipo **
+- typeof //devuelve tipo de dato de variable.
+- instanceof //devuelve true si el objeto es una instancia de.
+
+*********************
+*** CONDICIONALES ***
+*********************
+*** IF ***
+if (condicion){
+
+} else if (condicion){
+
+}else{
+
+}
+
+*** IF TERNARIO ***
+momento = (hora_actual < 12) ? "Antes del mediodía" : "Después del
+mediodía"
+
+*** SWITCH ***
+switch (expr) {
+	case 'Naranjas':
+		console.log('El kilogramo de naranjas cuesta $0.59.');
+		break;
+	case 'Mangos':
+	case 'Papayas':
+		console.log('El kilogramo de mangos y papayas cuesta $2.79.');
+		break;
+	default:
+		console.log('Lo lamentamos, por el momento no disponemos de ' + expr + '.');
+}
+
+
+*******************************
+*** ESTRUCTURAS REPETITIVAS ***
+*******************************
+*** WHILE ***
+let a = 0;
+while(a != 10){
+	console.log(++a);
+}
+
+*** DO WHILE ***
+let a = 0;
+do{
+	console.log(++a);
+}while(a!=10);
+
+*** FOR ***
+for(let i = 0; i < 10; i++){
+	console.log("El valor de i es " + i);
+}
+
+*** BREAK *** //detiene el bucle.
+for (let i = 0; i < 10; i++) {
+	if(i == 5){
+		break;
+	}
+	console.log("Estamos por la vuelta "+i);
+}
+
+*** CONTINUE *** //continua a la sig iteracion.
+for (let i = 0; i < 10; i++) {
+	if(i == 5){
+		continue;
+	}
+	console.log("Estamos por la vuelta "+i);
+}
+
+*** LABEL *** //referencia a un break o continue.
+exterior: for (let i = 0; i < 10; i++) {
+	for (let j = 0; j < 10; j++) {
+		if(i == 4 && j == 4){
+			console.log("Vamos a cortar ambos for");
+			break exterior;
+		}
+		console.log(i+j+10*i);
+	}
+}
+
+
+*****************
+*** FUNCIONES ***
+*****************
+*** NORMAL ***
+function escribirBienvenida(nombre){
+	console.log(‘Hola ’ + nombre);
+}
+
+function media(valor1,valor2){
+	let resultado;
+	resultado = (valor1 + valor2) / 2;
+	return resultado;
+}
+
+*** FLECHA ***
+let sum = (a, b) => a + b;
+
+
+***************
+*** OBJETOS ***
+***************
+- Asociacion entre clave y valor.
+- Una funcion puede ser valor, se llamara metodo.
+- Las claves solo pueden ser string.
+- Sensibles a mayus y minus.
+- EJEMPLO:
+* Definiendo propiedades asignando valor.
+var miAuto = new Object();
+miAuto.marca = 'Ford';
+miAuto.modelo = 'Mustang';
+miAuto.anio = 1969;
+
+* Iniciando objeto.
+var miAuto = {
+	marca : 'Ford',
+	modelo : 'Mustang',
+	anio : 1969
+}
+
+* Con funcion constructora.
+function Auto(marca,modelo,anio){
+	this.marca = marca;
+	this.modelo = modelo;
+	this.anio = anio;
+}
+var miAuto = new Auto('Ford','Mustang',1969);
+
+- Propiedades sin valor son undefined.
+
+*** DEFINIR METODOS ***
+function Auto(marca,modelo,anio, propietario){
+	this.marca = marca;
+	this.modelo = modelo;
+	this.anio = anio;
+	this.mostrarAuto = function mostrarAuto() {
+		var resultado = `Un hermoso ${this.anio} ${this.marca} ${this.modelo}`;
+		console.log(resultado);
+	}
+}
+miAuto.mostrarAuto;
+
+
+****************************
+*** OBJETOS INCORPORADOS ***
+****************************
+- Se encuentran de manera nativa.
+• Number, para realizar algunas cosas con números
+• Boolean, trabajo con boleanos.
+
+*** STRING ***
+- Propiedades:
+* Length
+let cadena = “Hola”;
+console.log(cadena.length); // 3
+
+- Metodos:
+* charAt(ind) //Devuelve el caracter encontrado en el indice.
+* toString() //Convierte a cadena.
+* indexOf(carac, desde) //Devuelve la posicion del caracter indicado empezando de izq a der, -1 si no encuentra. Segundo parametro opcional, indica desde donde empieza.
+* lastIndexOf(carac, desde) //Devuelve la posicion del caracter indicado empezando de izq a der, -1 si no encuentra. Segundo parametro opcional, indica desde donde empieza.
+* toLowerCase() //String a minus.
+* toUpperCase() //String a mayus.
+* replace(stringARemplazar, stringNew) //Devuelve un string remplazando una porcion del string indicado con el nuevo.
+* substring(inicio, fin) //Devuelve substring que empieza en el caracter de inicio y termina en el caracter de fin.
+
+*** MATH ***
+- Metodos:
+* abs() //Devuelve absoluto de un numero.
+* cail() //Devuelve el entero igual o inmediatamente siguiente de un número. Por ejemplo, ceil(3)vale 3, ceil(3.4) es 4.
+* floor() //Lo contrario de ceil(), pues devuelve un número igual o inmediatamente inferior.
+* exp() //Retorna el valor de elevar un numero por un numero.
+* max() //mayor de 2 numeros.
+* min() //menor de 2 numeros.
+* pow() //devuelve el primer número elevado al segundo número.
+* random() //devuelve un numero aleatorio entre 0 y 1.
+* PI //No es método, es una propiedad, que nos permite tener el valor de PI.
+
+*** DATE ***
+- miFecha = new Date() //fecha actual.
+- miFecha = new Date(año,mes,dia) //fecha especifica
+- Metodos:
+* getDate() //Dia del mes.
+* getDay() //Dia de la semana.
+* getHours() //Hora.
+* getMinutes() //minutos.
+* getMonth() //Mes(empieza en 0).
+* getFullYear() //Año
+* setDate() //Cambia dia de mes.
+* setMonth() //Cambia el mes(empieza en 0).
+* setHours() //Cambia hora.
+* setMinutes() //Cambia los minutos.
+* setFullYear() //Cambia el año.
+
+*** ARRAYS ***
+- Declaracion:
+let arr = new Array();
+let arr = [];
+let frutas = ["Manzana", "Naranja", "Uva"];
+
+- Bucles:
+* for:
+let frutas = ["Manzana", "Naranja", "Uva"];
+for (let i = 0; i < frutas.length; i++) {
+	console.log( frutas[i] );
+}
+* Foreach:
+let array = [2, 5, 9].
+array.forEach(function mostrarElementosArray(elemento, indice, array) {
+	console.log("a[" + indice + "] = " + elemento);
+});
+* For of:
+let frutas = ["Manzana", "Naranja", "Uva"];
+for(let fruta of frutas){
+	console.log(fruta); // ["Manzana", "Naranja", "Uva"];
+}
+* For in: //for de objetos
+for (let empleado of empleados){
+	for(let dato in empleado){
+		console.log(empleado[dato]);
+	}
+}
+
+- Metodos:
+* splice() //remueve elementos.
+let arr = ["Yo", "estudio", "JavaScript"];
+arr.splice(1, 1); // desde el índice 1, remover 1 elemento
+console.log(arr); // ["Yo", "JavaScript"]
+
+* slice() //devuelve una copia de un array desde un inicio y fin definido.
+let arr = ["t", "e", "s", "t"];
+console.log( arr.slice(1, 3) ); // e,s (copia desde 1 hasta 3)
+
+* split() //Separa string en elementos según el delimitante dado y los devuelve como un array.
+let nombres = 'Bilbo, Gandalf, Nazgul';
+let arr = nombres.split(', ');
+for (let name of arr) {
+	console.log( `Un mensaje para ${name}.` ); // Un mensaje para Bilbo y los otros nombres
+}
+
+* reverse() //revierte orden de elementos.
+let arr = [1, 2, 3, 4, 5];
+arr.reverse();
+console.log( arr ); // 5,4,3,2,1
+
+* sort(fn) //ordena elementos
+.normal
+let arr = [ 1, 2, 15 ];
+arr.sort();
+console.log( arr ); // 1, 15, 2
+.funcion
+function compareNumeric(a, b) {
+	if (a > b) return 1;
+	if (a == b) return 0;
+	if (a < b) return -1;
+}
+let arr = [ 1, 15, 2 ];
+arr.sort(compareNumeric);
+console.log(arr); // 1, 2, 15
+
+* map() //devuelve un nuevo array con cambios aplicados a cada elemento.
+let longitudes = ["Bilbo", "Gandalf", "Nazgul"].map(function(elemento){
+	elemento.length();
+});
+console.log(longitudes); // 5,7,6
+
+* flat() //crea una nueva matriz con todos los elementos de sub-array concatenados recursivamente hasta la profundidad especificada.
+var arr1 = [1, 2, [3, 4]];
+arr1.flat();
+// [1, 2, 3, 4]
+
+* flatMap() //El método flatMap() devuelve un nuevo array formado al aplicar una función de devolución de llamada determinada a cada elemento de la matriz y luego aplanar el resultado en un nivel. Es idéntico a un map() seguido de un flat() de profundidad 1, pero un poco más eficiente que llamar a esos dos métodos por separado.
+var arr1 = [1, 2, 3, 4];
+var arr2 = arr1.flatMap(function(x){
+	x = x * 2;
+});
+console.log(arr2) // [2, 4, 6, 8]
+
+* concat() //une dos o mas arrays.
+
+* join() //Une elementos de un array en un string con un separador opcional.
+
+* pop() //Borra el ultimo elemento y lo devuelve.
+
+* push() //Añade elementos a un array y devuelve su longitud.
+
+* shift() //Elimina el primer elemento y lo devuelve.
+
+* find() //Devuelve el valor del primer elemento hallado segun la funcion.
+
+* unshift() //Añade elementos al inicio al array y devuelve la longitud.
+
+
+***********
+*** MAP ***
+***********
+- Coleccion de datos identificados por claves.
+- Permite claves de cualquier tipo de dato.
+
+- Metodos y propiedades:
+• new Map(): crea el mapa.
+• map.set(clave, valor): almacena el valor asociado a la clave.
+• map.get(clave): devuelve el valor de la clave. Será undefined si no existe.
+• map.has(clave): devuelve true si la clave existe en map, false si no existe.
+• map.delete(clave): elimina el valor de la clave.
+• map.clear(): elimina todo de map.
+• map.size: tamaño, devuelve la cantidad actual de elementos. 
+
+- Iteracion:
+• map.keys(): devuelve un iterable para las claves.
+• map.values(): devuelve un iterable para los valores.
+• map.entries(): devuelve un iterable para las entradas [clave, valor]. Es el que usa por defecto en for..of. 
+
+***********
+*** SET ***
+***********
+- Coleccion de valores que no se repiten.
+
+- Metodos:
+• new Set(iterable): crea el set. El argumento opcional es un objeto iterable (generalmente un array) con valores para inicializarlo.
+• set.add(valor): agrega un valor, y devuelve el set en sí.
+• set.delete(valor): elimina el valor, y devuelve true si el valor existía al momento de la llamada; si no, devuelve false.
+• set.has(valor):devuelve true si el valor existe en el set, si no, devuelve false.
+• set.clear(): elimina todo el contenido del set.
+• set.size: es la cantidad de elementos.
+
+- Iteracion:
+let setFrutas = new Set(["naranjas", "manzanas", "uvas"]);
+* for...of
+for (let valor of setFrutas){
+	console.log(valor); // "naranjas", "manzanas", "uvas"
+}
+* forEach
+setFrutas.forEach((valor, valorDeNuevo, setFrutas) => {
+	console.log(valor); // "naranjas", "manzanas", "uvas"
+});
+
+
+************
+*** JSON ***
+************
+- JavaScript Object Notation.
+- Formato de texto ligero para intercambiar datos.
+- Basado en JS, Standard ECMA-262.
+- Sintaxis de clave y valor, la clave debe ser String, y el valor puede ser array, objeto, string, boolean, number o null.
+- No soporta funciones.
+- Empiezan y terminan con {}.
+- Dentro de las llaves puede tener muchos datos clave/valor separados con coma.
+- Ejemplos:
+"estudiantes": [
+	{"primerNombre":"Tom", "Apellido":"Jackson"},
+	{"primerNombre":"Linda", "Apellido":"Garner"},
+	{"primerNombre":"Adam", "Apellido":"Cooper"}
+]
+
+*** METODOS ***
+- JSON.parse() //conviente JSON a objeto.
+const str = '{ "name": "Manz", "life": 99 }';
+const obj = JSON.parse(str);
+obj.name; // 'Manz'
+obj.life; // 99
+- JSON.stringify() //convierte objeto a JSON.
+const obj = {
+	name: "Manz",
+	life: 99,
+	saludar: function () {
+		return "Hola!";
+	},
+};
+const str = JSON.stringify(obj);
+console.log(str); // '{"name":"Manz","life":99}'
+
+
+*************************
+*** MANEJO DE ERRORES ***
+*************************
+try {
+	throw "miExcepcion"; // genera una excepción
+}catch(e) {
+	// sentencias para manejar cualquier excepción
+	logMyErrors(e); // pasa el objeto de la excepción al manejador de errores
+}
+
+function isValidJSON(text) {
+	try {
+		JSON.parse(text);
+		return true;
+	} catch {
+		return false; 
+	}
+}
+
+try {
+	miRutina(); // puede lanzar tres tipos de excepciones
+} catch (e) {
+	if (e instanceof TypeError) {
+		// sentencias para manejar excepciones TypeError
+	} else if (e instanceof RangeError) {
+		// sentencias para manejar excepciones RangeError
+	} else if (e instanceof EvalError) {
+		// sentencias para manejar excepciones EvalError
+	} else {
+		// sentencias para manejar cualquier excepción no especificada
+		logMyErrors(e); // pasa el objeto de la excepción al manejador de errores
+	}
+}
+
+
+***********
+*** DOM ***
+***********
+- Document Object Model.
+- Estrucura de etiquetas.
+
+*** OBJETO WINDOW ***
+- alert(texto) //ventana de alerta.
+- back() //volver atras en el historial.
+- captureEvents(eventos) //captura eventos definidos.
+- close() //cierra la ventana.
+- confirm() //ventana de confirmacion, aceptar o rechazar.
+- find() //ventana de busqueda.
+- home() //ir a pagina de inicio del explorador.
+- prompt(pregunta,inicializacionDeLaRespuesta) //caja de dialogo para pedir datos.
+- setInterval() //definir script para que se ejecute cada cierto tiempo.
+- setTimeout(sentencia, milisegundos) //definir script para que se ejecute despues de cierto tiempo.
+- clearInterval() //Elimina el intervalo.
+- clearTimeout() //Elimina tiempo de espera.
+
+*** OBJETO DOCUMENT ***
+* Seleccionar elementos.
+- getElementById(id) //busca elemento HTML por id, sino encuentra en null.
+const page = document.getElementById("page"); // <div id="page"></div>
+- .getElementsByClassName(class) //busca elementos por clase, sino encuentra es [].
+const items = document.getElementsByClassName("item"); // [div, div, div]
+- .getElementsByName(name) //busca elementos por name, sino encuentra es [].
+const items = document.getElementsByTagName("h1"); // [h1, h1]
+- .getElementsByTagName(tag) //cierra la ventana.
+
+* Seleccionar atributos.
+const div = document.getElementById("page");
+- getAttribute(atributo) //Devuelve el valor del atributo.
+div.getAttribute("id"); // "page"
+- getAttributeNames() //Devuelve un array con los atributos.
+div.getAttributeNames(); // ["id", "data-number", "class"]
+- setAttribute(atributo, valor) //Establece el valor de un atributo.
+div.setAttribute("id", "page"); // Vuelve a añadir id="page"
+- hasAttributes() //Indica si el elemento tiene atributos.
+div.hasAttributes(); // true (tiene 3 atributos)
+- hasAttribute(atributo) //Devuelve un boolean indicando si el elemento tiene el atributo.
+div.hasAttribute("data-number"); // true (data-number existe)
+- removeAttribute(atributo) //Elimina el atributo.
+div.removeAttribute("id"); // class="info data dark" y data-number="5"
+
+
+***********************************
+*** MODIFICAR ELEMENTOS DEL DOM ***
+***********************************
+*** REEMPLAZAR ***
+- nodeName //Devuelve nombre del nodo(etiqueta).
+
+- textContent //Devuelve contenido del elemento, se puede asignar para modificar. No renderiza html.
+const div = document.getElementById("div"); // <div></div>
+div.textContent = "Hola a todos"; // <div>Hola a todos</div>
+div.textContent; // "Hola a todos"
+
+- innerHTML //Devuelve contenido del elemento, se puede asignar para modificar, renderiza HTML
+const div = document.getElementById("info"); // <div class="info"></div>
+div.innerHTML = "<strong>Importante</strong>"; // Interpreta el HTML
+div.innerHTML; // "<strong>Importante</strong>"
+
+- outerHTML //Igual a inner, pero incluye el contenido del propio HTML.
+
+*** INSERTAR ***
+- appendChild(node) //inserta un hijo node al nodo.
+const img = document.getElementByTagName("img");
+img.src = "https://lenguajejs.com/assets/logo.svg";
+img.alt = "Logo Javascript";
+document.body.appendChild(img);
+
+- insertAdjacentElement(pos, elem) //Inserta el elemento elem en la posicion pos. Si falla, null.
+
+- insertAdjacentHTML(pos, str) //Inserta el codigo HTML str en la posicion pos.
+
+- .insertAdjacentText(pos, text) //inserta text en la  posicion pos.
+
+- .insertBefore(new, node) //Inserta el nodo new antes de node y como hijo del nodo actual.
+
+- .appendChild(node) //Añade como hijo el nodo node. Devuelve el nodo insertado.
+
+*** ELIMINAR ***
+- remove() //elimina el nodo.
+const div = document.getElementById("deleteme");
+div.isConnected; // true
+div.remove();
+div.isConnected; // false
+
+- removeChild(node) //Elimina y devuelve el nodo hijo.
+- replaceChild((new, old) //Reemplaza el nodo hijo old por new. Devuelve old.
+
+
+***************
+*** EVENTOS ***
+***************
+- Cada elemento tiene su lista de posibles eventos.
+- onblur //Elemento pierde foco.
+<button>, <input>, <label>, <select>, <textarea>, <body>
+
+- onchange //Elemento ha sido modificado.
+<input>, <select>, <textarea>
+
+- onclick //Pulsar y soltar raton.
+Todos los elementos.
+
+- ondblclick //Pulsar dos veces seguidas con el raton.
+Todos los elementos.
+
+- onFocus //Elemento en foco.
+<button>, <input>, <label>, <select>, <textarea>, <body>
+
+- onkeydown //Pulsar una tecla y no soltarla.
+Elementos de forms y <body>
+
+- onkeypress //Pulsar una tecla.
+Elementos de forms y <body>
+
+- onkeyup //Soltar una tecla pulsada.
+Elementos de forms y <body>
+
+- onload //pagina cargada completamente.
+<body>
+
+- onmousedown //Pulsar boton del raton y no soltarlo.
+Todos los elementos.
+
+- onmousemove //Mover el raton.
+Todos los elementos.
+
+- onmouseout //El raton sale del elemento. 
+Todos los elementos.
+
+- onmouseover //El raton entra en el elemento.
+Todos los elementos.
+
+- onmouseup //Soltar el boton del raton.
+Todos los elementos.
+
+- onreset //Inicializar el form.
+<form>
+
+- onresize //Modificar tamaño de ventana.
+<body>
+
+- onselect //Seleccionar texto.
+<input>, <textarea>
+
+- onsubmit //Enviar form.
+<form>
+
+- onunload //Se abandona la pagina.
+<body>
+
+
+****************************
+*** MANEJADOR DE EVENTOS ***
+****************************
+*** MANEJADORES COMO ATRIBUTOS HTML ***
+Dentro de la misma etiqueta.
+
+<input type="button" value="Pinchame y verás" onclick="console.log('Gracias por pinchar');" />
+
+*** MANEJADORES DE EVENTOS COMO FUNCIONES EXTERNAS ***
+Usar funcion aparte y llamarla en la etiqueta.
+
+function muestraMensaje() {
+	console.log('Gracias por pinchar');
+}
+<input type="button" value="Pinchame y verás" onclick="muestraMensaje()"/>
+
+*** MANEJADORES DE EVENTOS SEMÁNTICOS ***
+Desde un archivo js declarar la funcion y seleccion el elemento, asi se ejecuta.
+
+function muestraMensaje() {
+	console.log('Gracias por pinchar');
+}
+document.getElementById("pinchable").onclick = muestraMensaje;
+<input id="pinchable" type="button" value="Pinchame y verás"/>
+
+
+******************
+*** ASINCRONIA ***
+******************
+- Pilar fundamental de JS.
+- JS solo puede ejecutar una cosa a la vez.
+- JS usa un modelo asincrono y no bloqueante.
+- Loop de eventos implementando un solo hilo (single thread).
+- Entrada y salida (input/output)
+
+
+*******************************************
+*** MECANISMOS ASÍNCRONOS EN JAVASCRIPT ***
+*******************************************
+*** CALLBACK ***
+- Funciones que pasan como parametro a otra funcion.
+- Permite reutilzar codigo y ser mas legible.
+- Un ejemplo es utilizar la funcion setTimeout(callback, time).
+setTimeout(function() {
+	console.log("He ejecutado la función");
+}, 2000);
+
+*** PROMESAS ***
+- Algo que se cumplira, pero pueden ocurrir varias cosas: se cumple, no se cumple, o queda en estado incierto.
+- En JS, una promesa tiene 3 estados concretos: pendiente, aceptada o rechazada.
+- Metodos de una promesa:
+* then(function resolve) //Ejecuta funcion callback resolve cuando la promesa cumple.
+* catch(function reject) //Ejecuta funcion callback resolve cuando la promesa no cumple.
+* .then(function resolve, function reject) // Método equivalente a las dos anteriores en el mismo .then().
+* .finally(function end) //Ejecuta la función callback end tanto si se cumple como si se rechaza.
+
+- Para consumir un promesa se usa un then.
+fetch("/robots.txt").then(function(response) {
+	/* Código a realizar cuando se cumpla la promesa */
+});
+
+- JS tiene una API Promise nativa, la cual tiene metodos estaticos:
+* Promise.all(Array list) //Acepta sólo si todas las promesas del Array se cumplen.
+* Promise.allSettled(Array list) //Acepta sólo si todas las promesas del Array se cumplen o rechazan.
+* Promise.any(Objet value) //Acepta con el valor de la primera promesa del Array que se cumpla.
+* Promise.race(Object value) //Acepta o rechaza dependiendo de la primera promesa que se procese.
+* Promise.resolve(Object value) //Devuelve un valor envuelto en una promesa que se cumple directamente.
+* Promise.reject(Object value) //Devuelve un valor envuelto en una promesa que se rechaza directamente.
+
+- Mediante los métodos estáticos Promise.resolve() y Promise.reject() podemos devolver una promesa cumplida o rechazada.
+//Promise
+function resolverEn3seg() {
+	return new Promise(function (resolve, reject) {
+		// setTimeout(() => {
+		// resolve('2-Resuelto');
+		// }, 3000);
+		setTimeout(() => {
+			reject(new Error("2-Oops i did it again"));
+		}, 3000);
+	});
+}
+
+*** ASYNC / AWAIT ***
+- Simplifican manejos de promesas.
+- Async declara una funcion como asincrona.
+async function funcion_asincrona() {
+	return 42;
+}
+
+- Await hace esperar a que se resuelva una promesa, mientras permite que se ejecuten otras.
+const funcion_asincrona = async () => 42;
+const valor = funcion_asincrona(); // Promise { <fulfilled>: 42 }
+const asyncValue = await funcion_asincrona(); // 42
+
+
+***********
+*** API ***
+***********
+- Application Programming Interfaces.
+- Conjunto de definiciones y protocolos que se utiliza para desarrollar e integrar el software  de las apps.
+- Sirve para facilitar el trabajo.
+• https://developers.mercadolibre.com.ar/
+• https://developer.paypal.com/docs/api/overview/
+• https://developers.facebook.com/docs/apis-and-sdks?locale=es_ES
+• https://datosgobar.github.io/georef-ar-api/
+• https://developers.google.com/maps/documentation/javascript/overview
+• https://rickandmortyapi.com/
+• https://dog.ceo/dog-api/
+• https://developer.spotify.com/documentation/web-api/
+
+
+*************
+*** FETCH ***
+*************
+- Proporciona una interfaz para acceder y manipular peticiones y respuestas.
+- fetch se usa asi:
+// Fetch GET
+async function getAllCharacters() {
+	let response = await fetch("https://rickandmortyapi.com/api/character");
+	let data = await response.json();
+	return data;
+}
+
+//Fetch POST
+async function postData(url = '', data = {}) {
+	const response = await fetch(url, {
+		method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		mode: 'cors', // no-cors, *cors, same-origin
+		cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		credentials: 'same-origin', // include, *same-origin, omit
+		headers: {
+			'Content-Type': 'application/json'
+			// 'Content-Type': 'application/x-www-form-urlencoded',
+		},
+	redirect: 'follow', // manual, *follow, error
+	referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when- cross-origin, unsafe-url
+	body: JSON.stringify(data) // el body debe ser igual al "Content-Type" header
+	});
+	return response.json();
+}
+postData('https://localhost:8080', { mascota: "Chiquito" })
+	.then(data => {
+	console.log(data);
+	});
+
+**********************
+*** OBJETO STORAGE ***
+**********************
+- localStorage y sessionStorage almacenas datos de manera local.
+- localStorage almacena indefinidamente o hasta limpiar.
+- sessionStorage almacena mientras la pestaña donde este siga abierta.
+
+*** GUARDAR ***
+- localStorage:
+localStorage.setItem('mascota', 'Chiquito');//guardo un elemento
+
+- SessionStorage:
+sessionStorage.setItem('mascota', 'Filomena');//guardo un elemento
+
+*** ELIMINAR ***
+- localStorage:
+localStorage.removeItem('mascota');//solo elimino este ítem
+
+- SessionStorage:
+sessionStorage.removeItem('mascota');//solo elimino este ítem
+
+*** NUMERO DE ELEMENTOS ***
+- localStorage:
+localStorage.length;//numero de elementos en local storage
+
+- SessionStorage:
+sessionStorage.length;//numero de elementos en local storage
+
+*** LIMPIAR ***
+- localStorage:
+localStorage.clear();//borro todos los items
+
+-SessionStorage:
+sessionStorage.clear();//borro todos los items
+
+
+***************
+*** COOKIES ***
+***************
+- Info enviada y recibida en las cabeceras HTTP, y queda almacenada del lado del cliente durante un tiempo determinado.
+- Las cookies permiten recordar un usuario.
+- Con DOCUMENT.COOKIE crea, modifica, elimina y lee cookies en JS. Dentro tienen varias propiedades:
+<nombre>=<valor>; expires=<fecha>; max-age=<segundos>; path=<ruta>; domain=<dominio>; secure; httponly;
+
+* Nombre-Valor: obligatorio. Nombre seria el nombre de la cookie, y valor seria su valor.
+* Expire date: opcional, establece fecha de vencimiento.
+* Max-age: parametro opcional que establece la duracion en segundos de la cookie.
+* Domain & path: opcional. Dominio y subdominio-
+* Secure: opcional. Solo valida para conexiones encriptadas.
+* HttpOnly: opcional. No disponible en js.
+
+*** CREAR COOKIES ***
+document.cookie = "mascota=Malva";//guardo un elemento
+
+*** LEER COOKIE ***
+let cookies = document.cookie;//obtengo todas las cookies
+Se mostrara asi “cookie1=valor1;cookie2=valor2;cookie3=valor3;cookie4=valor4;....
+
+*** ELIMINAR COOKIE ***
+document.cookie = "mascota= ";//elimino el dato asociado al elemento
+
+
+********************************************
+*** DIFERENCIAS ENTRE COOKIES Y SESIONES ***
+********************************************
+- En la sesion se guarda del lado del servidor, y la cookie del lado del cliente.
+- Las sesiones se destruyen cuando cierras el navegador, y las cookies permanecen por un tiempo determinado.
+- La cookie es insegura, y la session no, ya que la primera se guarda del lado del cliente y la otra del lado del cliente.
+- Cada una sirve para algo especifico, queda en cada uno elegir.
+
